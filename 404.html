@@ -27,6 +27,8 @@
     Flatdoc.run({
       fetcher: Flatdoc.github('keshavsaharia/keshavsaharia.github.io', 'markdown/' + url + '.md')
     });
+    if (window.history)
+      window.history.pushState({}, '', url);
   </script>
 </head>
 <body role='flatdoc'>
