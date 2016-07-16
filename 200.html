@@ -23,12 +23,17 @@
   <!-- Initializer -->
   <script>
     var url = document.URL.substring('https://'.length);
-    url = url.substring(url.indexOf('/') + 1).toLowerCase();
+    if (url.indexOf('/') > 0) {
+      url = url.substring(url.indexOf('/') + 1).toLowerCase();
+      if (url.length > 0)
+        url = 'markdown/' + url + '.md'
+      else url = undefined;
+    }
+    else url = undefined;
+    
     Flatdoc.run({
-      fetcher: Flatdoc.github('keshavsaharia/keshavsaharia.github.io', 'markdown/' + url + '.md')
+      fetcher: Flatdoc.github('keshavsaharia/keshavsaharia.github.io', url)
     });
-    if (window.history)
-      window.history.pushState({}, '', url);
   </script>
 </head>
 <body role='flatdoc'>
