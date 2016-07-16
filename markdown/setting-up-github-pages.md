@@ -8,15 +8,15 @@ You must be logged in to a GitHub account.
 
 - In the top right corner of any GitHub page, click the plus icon, then click "create new repository". A repository is a publicly-visible folder hosted by GitHub where you can share files.
 
-[https://keshavsaharia.github.io/image/new-repository.png]
+![](https://keshavsaharia.github.io/image/new-repository.png)
 
 Create a repository named exactly "**yourgithubusername**.github.io", where **yourgithubusername** is substituted for your own username. Check the box for "Initialize this repository with a README". 
 
-[https://keshavsaharia.github.io/image/create-github-pages-repository.png]
+![](https://keshavsaharia.github.io/image/create-github-pages-repository.png)
 
 Finally, click the green "Create repository" button, which will bring you to a page showing the files in your repository.
 
-[https://keshavsaharia.github.io/image/github-pages-repository.png]
+![](https://keshavsaharia.github.io/image/github-pages-repository.png)
 
 Click the buttons to create individual files or upload your own HTML files. You should be able to navigate to [**yourusername**.github.io](https://keshavsaharia.github.io/) and see your HTML page.
 
