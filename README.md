@@ -2,6 +2,18 @@
 
 [How to set up GitHub pages](setting-up-github-pages)
 
+# Bash
+
+[Passwordless SSH](sshing-without-a-password)
+
+# JavaScript
+
+[Full screen elements](making-fullscreen-elements)
+
+# Philosophy
+
+[Explaining Taoism](explaining-taoism)
+
 ## TODO
 
 - editing code with Atom
