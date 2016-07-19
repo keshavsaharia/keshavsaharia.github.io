@@ -5,7 +5,7 @@ Taoism is the root of Chinese philosophy that emphasizes living in harmony with 
 The central text for Taoist philosophy is the Tao Te Ching, which has been translated in many different ways by many different people. If you have an iPhone, you can download my free [Taoism app](https://itunes.apple.com/gd/app/tao-te-ching-popular-translations/id1117706249?mt=8) which has many translations, and showcases my favorite translation by Gia-Fu Feng and Jane English.
 
 ```
-Tao Te Ching, Chapter 1
+Chapter 1
 
 The Tao that can be told is not the eternal Tao.
 The name that can be named is not the eternal name.
@@ -35,3 +35,8 @@ And loses by gaining.
 
 Taoism is sometimes spelled as Daoism, and Tao is sometimes romanized as Dao. The root Chinese character is 道, which means *the way* or *the path*. The older Wades-Giles system romanized the character as "tao", while modern Pinyin romanizes it as "dào". The correct Chinese pronunciation of "Tao Te Ching" does not have pauses between the words - it sounds like the single word "daodejing".
 
+## The Tao of Software Development
+
+This is an extremely entertaining read for those who appreciate Taoism.
+
+[http://www.mit.edu/~xela/tao.html](http://www.mit.edu/~xela/tao.html)
