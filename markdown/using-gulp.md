@@ -27,7 +27,15 @@ var source = {
 	// A list of JS sources in order
 	js: ['./src/lib/**/*.js', './src/js/**/*.js']
 };
+```
 
+## Modules
+
+Here is a [package.json](how.keshav.is/coding/using-gulp/package.json) file with all the necessary information. Drop it in your folder, then `npm install`.
+
+Here are the base recommended modules.
+
+```javascript
 var gulp = require('gulp'),
 
     // Essential gulp plugins
@@ -39,9 +47,21 @@ var gulp = require('gulp'),
     uglifyCSS = require('gulp-uglify-css');
 ```
 
-# CSS Tasks
+# HTML (simple)
 
-The CSS task usually just concatenates and uglifies the CSS files into a single `style.css` file.
+This simply copies all HTML files to the build folders.
+
+```javascript
+gulp.task('html', function() {
+	return gulp.src(source.html)
+		.pipe(gulp.dest(developer))
+		.pipe(gulp.dest(production))
+});
+```
+
+# CSS
+
+The CSS task first concatenates and uglifies the CSS files into a single `style.css` file.
 
 ```javascript
 gulp.task('css', function() {
@@ -50,16 +70,6 @@ gulp.task('css', function() {
 		.pipe(gulp.dest(developer))
 		.pipe(uglifycss())
 		.pipe(gulp.dest(production));
-});
-```
-
-# Basic HTML
-
-```javascript
-gulp.task('html', function() {
-	return gulp.src(source.html)
-		.pipe(gulp.dest(developer))
-		.pipe(gulp.dest(production))
 });
 ```
 
