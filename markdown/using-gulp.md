@@ -32,6 +32,7 @@ var gulp = require('gulp'),
 
     // Essential gulp plugins
     concat = require('gulp-concat'),
+    rename = require('gulp-rename'),
     merge = require('merge-stream'),
 
     uglifyJS = require('gulp-uglify'),
@@ -52,18 +53,6 @@ gulp.task('css', function() {
 });
 ```
 
-# Nunjucks rendering
-
-```javascript
-var render = require('gulp-nunjucks-render');
-
-gulp.task('render', function() {
-  return merge(
-    // ... render tasks ...
-  );
-});
-```
-
 # Basic HTML
 
 ```javascript
@@ -73,3 +62,36 @@ gulp.task('html', function() {
 		.pipe(gulp.dest(production))
 });
 ```
+
+# Nunjucks
+
+Nunjucks is an open-source templating engine built by Mozilla. The [documentation](https://mozilla.github.io/nunjucks/) describes the templating system in depth. Gulp has a plugin for adding nunjucks to your pipeline.
+
+```javascript
+source.template = ['./src/template/'];
+source.data = ['./src/data/config.json'];
+
+// Configure nunjucks
+var render = require('gulp-nunjucks-render');
+render.nunjucks.configure(source.template, { watch: true });
+
+/**
+ * HTML task for generating static pages.
+ */
+gulp.task('html', function() {
+	var task = gulp.src(source.html);
+
+	if (Array.isArray(source.data))
+		source.data.forEach(function(dataSource) {
+			task = task.pipe(insert(require(dataSource)));
+		});
+
+	return task
+		.pipe(render())
+		.pipe(gulp.dest(developer))
+		.pipe(gulp.dest(production))
+});
+
+```
+
+
