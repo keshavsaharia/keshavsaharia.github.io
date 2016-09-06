@@ -1,6 +1,10 @@
-This is how I use the `gulp` module with Node.js.
+Gulp makes it easy to define pipeline for files.
 
-# Static page
+This is how I use the `gulp` module with Node.js. 
+
+# Setup paths
+
+For the examples below, I'm using a header which describes all source paths and build destinations.
 
 ```javascript
 /**
@@ -68,6 +72,4 @@ gulp.task('html', function() {
 		.pipe(gulp.dest(developer))
 		.pipe(gulp.dest(production))
 });
-```
-
 ```
