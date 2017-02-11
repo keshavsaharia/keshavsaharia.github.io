@@ -1,12 +1,14 @@
 {
-	"include": ["writing", "working", "building", "coding"],
 	"title": "keshav is",
 	"description": "Keshav is an educator and computer scientist.",
 
 	"interest": {
 		"education": {
 			"title": "Education",
-			"text": "I develop apps to teach kids."
+			"text": "I work on curriculum and teaching tools for computer science education."
+		},
+		"": {
+
 		}
 	},
 
