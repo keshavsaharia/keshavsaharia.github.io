@@ -2,11 +2,12 @@
 
 {% block content %}
 <div class="nav">
-    <a href="#" class="select-posts active">Po sts</a>
+    <a href="#" class="select-posts active">Posts</a>
     <a href="#" class="select-categories">Projects</a>
 </div>
 <div class="home-page-posts animated fadeIn ">
     {% for postId, post in writing %}
+    {{postId}}
     <div class="post">
         <section>
             <div class="post-preview col-xs-10  no-gutter">
