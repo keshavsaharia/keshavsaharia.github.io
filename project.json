@@ -1,0 +1,29 @@
+{
+	"pythonroom": {
+		"title": "Pythonroom",
+		"url": "https://pythonroom.com",
+		"image": ""
+	},
+	"techlab": {
+		"title": "Techlab",
+		"url": "https://techlab.education",
+		"image": ""
+	},
+	"apcsio": {
+		"title": "apcs.io",
+		"url": "http://apcs.io",
+		"image": ""
+	},
+	"curriculumio": {
+		"title": "curriculum.io",
+		"url": "https://curriculum.io",
+		"image": ""
+	},
+	"pseudocodeio": {
+		"title": "pseudocode.io"
+	},
+	"spacecode": {
+		"title": "spacecode",
+		"hide": true
+	}
+}

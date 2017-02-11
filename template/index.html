@@ -59,35 +59,14 @@
                 <div class="home-page-categories hide animated fadeIn ">
                     <div class="category row">
                         <section>
+							{% for projectId, projectData in project %}
                             <div class="category-preview col-xs-6 col-sm-4 ">
-                                <h2>Pythonroom</h2>
-                                <a href="category.html"><img src="img/cover-2.jpg" alt="category-image"></a>
+                                <h2>{{projectData.title}}</h2>
+                                <a href="{{projectData.url}}">
+									<img src="/img/project/{{projectId}}.jpg" alt="category-image">
+								</a>
                             </div>
-
-                            <div class="category-preview col-xs-6 col-sm-4 ">
-                                <h2>Techlab</h2>
-                                <a href="category.html"><img src="img/cover-4.jpg" alt="category-image"></a>
-                            </div>
-
-                            <div class="category-preview col-xs-6 col-sm-4 ">
-                                <h2>curriculum.io</h2>
-                                <a href="category.html"><img src="img/cover-6.jpg" alt="category-image"></a>
-                            </div>
-
-                            <div class="category-preview col-xs-6 col-sm-4 ">
-                                <h2>pseudocode.io</h2>
-                                <a href="category.html"><img src="img/cover-6.jpg" alt="category-image"></a>
-                            </div>
-
-                            <div class="category-preview col-xs-6 col-sm-4 ">
-                                <h2>APCS graphics</h2>
-                                <a href="category.html"><img src="img/cover-6.jpg" alt="category-image"></a>
-                            </div>
-
-                            <div class="category-preview col-xs-6 col-sm-4 ">
-                                <h2>spacecode</h2>
-                                <a href="category.html"><img src="img/cover-6.jpg" alt="category-image"></a>
-                            </div>
+							{% endfor %}
 
                         </section>
                     </div>

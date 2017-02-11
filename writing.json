@@ -1,24 +1,16 @@
 {
     "big-numbers": {
         "title": "Big Numbers",
-        "text": "About big numbers"
+        "subtitle": "My strategy for introducing students to mathematical operators with Python code.",
+        "description": "A short exercise for students in a coding class, to help them appreciate a computer's ability to work with huge numbers.",
+        "posted": "March 25th, 2015",
+        "splash": "numbers.jpg"
     },
-    "coffeemaker": {
-        "title": "IoT coffeemaker",
-        "subtitle": "An Arduino-controlled coffeemaker that is connected to the Internet.",
-        "date": "March 25th, 2015",
-        "image": "coffeemaker.jpg"
-    },
-    "basement": {
-        "title": "Smart Basement",
-        "text": "A two-year project to design an automated room with a voice controlled assistant in a basement.",
-        "image": "basement.jpg"
-    },
-    "drop7": {
-        "title": "Drop7 Simulator",
-        "subtitle": "A Java program to simulate the iPhone game Drop7.",
-        "description": "A Java simulator to find the optimal move in an iPhone game.",
-        "date": "January 5th, 2011",
-        "image": "drop7.jpg"
+    "halting-problem": {
+        "title": "The Halting Problem",
+        "subtitle": "An code-based explanation for those studying computability theory.",
+        "description": "Can you make a program that determines if another program will run forever or terminate?",
+        "posted": "June 5th, 2015",
+        "splash": "numbers.jpg"
     }
 }
