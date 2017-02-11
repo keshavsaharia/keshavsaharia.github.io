@@ -2,12 +2,12 @@
 
 {% block content %}
 <div class="nav">
-    <a href="#" class="select-posts active">Writing</a>
-    <a href="#" class="select-categories">Building</a>
-    <a href="#" class="select-categories">Coding</a>
-    <a href="#" class="select-categories">Working</a>
+    <a href="#" class="select-writing active">Writing</a>
+    <a href="#" class="select-building">Building</a>
+    <a href="#" class="select-coding">Coding</a>
+    <a href="#" class="select-working">Working</a>
 </div>
-<div class="home-page-posts animated fadeIn ">
+<div class="home-page-writing animated fadeIn ">
     {% for postId, post in writing %}
     <div class="post">
         <section>
@@ -20,7 +20,7 @@
             </div>
 
             <div class=" col-xs-3 no-gutter">
-                <img src="img/profile-1.jpg" class="user-icon">
+                <img src="img/writing/{{postId}}/square.jpg" class="user-icon">
             </div>
 
         </section>
@@ -28,7 +28,37 @@
     {% endfor %}
 </div>
 
-<div class="home-page-categories hide animated fadeIn ">
+<div class="home-page-building hide animated fadeIn ">
+    <div class="category row">
+        <section>
+            {% for buildId, buildData in building %}
+            <div class="category-preview col-xs-6 col-sm-4 ">
+                <h2>{{buildData.title}}</h2>
+                <a href="/building/{{buildId}}">
+                    <img src="/img/building/{{buildId}}.jpg" alt="category-image">
+                </a>
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+</div>
+
+<div class="home-page-coding hide animated fadeIn ">
+    <div class="category row">
+        <section>
+            {% for codeId, codeData in coding %}
+            <div class="category-preview col-xs-6 col-sm-4 ">
+                <h2>{{codeData.title}}</h2>
+                <a href="/coding/{{codeId}}">
+                    <img src="/img/coding/{{codeId}}.jpg" alt="category-image">
+                </a>
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+</div>
+
+<div class="home-page-working hide animated fadeIn ">
     <div class="category row">
         <section>
             {% for projectId, projectData in project %}
