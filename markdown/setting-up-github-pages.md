@@ -4,13 +4,13 @@ First, we will [create a repository](#create-a-repository) named "**yourgithubus
 
 ## Create a repository
 
-You must be logged in to a GitHub account. 
+You must be logged in to a GitHub account.
 
 - In the top right corner of any GitHub page, click the plus icon, then click "create new repository". A repository is a publicly-visible folder hosted by GitHub where you can share files.
 
 ![](https://keshavsaharia.github.io/image/new-repository.png)
 
-Create a repository named exactly "**yourgithubusername**.github.io", where **yourgithubusername** is substituted for your own username. Check the box for "Initialize this repository with a README". 
+Create a repository named exactly "**yourgithubusername**.github.io", where **yourgithubusername** is substituted for your own username. Check the box for "Initialize this repository with a README".
 
 ![](https://keshavsaharia.github.io/image/create-github-pages-repository.png)
 
@@ -31,7 +31,7 @@ Once you have registered a domain, you will need to add two `A` records that poi
 - 192.30.252.153
 - 192.30.252.154
 
-Finally, add a CNAME record for the key "www" with a value of **yourgithubusername.github.io**. 
+Finally, add a CNAME record for the key "www" with a value of **yourgithubusername.github.io**.
 
 It can anywhere from a couple minutes to a couple hours for your domain registrar to update its DNS servers with the changes.
 

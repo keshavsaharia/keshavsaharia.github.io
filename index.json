@@ -1,5 +1,24 @@
 {
 	"include": ["writing", "working", "building", "coding"],
 	"title": "keshav is",
-	"description": "Keshav is an educator and computer scientist."
+	"description": "Keshav is an educator and computer scientist.",
+
+	"favorite": {
+		"techlab": {
+			"title": "Education",
+			"text": "A summary of four years "
+		}
+	},
+
+	"project": {
+		"techlab": {
+			"title": "Techlab",
+			"url": "working/on/techlab",
+			"text": ""
+		},
+		"": {
+			"title": "",
+			"text": ""
+		}
+	}
 }

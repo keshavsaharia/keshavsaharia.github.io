@@ -7,6 +7,42 @@
     <a href="#" class="select-coding">Coding</a>
     <a href="#" class="select-working">Working</a>
 </div>
+<div class="favorites">
+    <h2>new writing</h2>
+</div>
+
+<div class="favorite-posts clearfix animated fadeIn ">
+    <section>
+        {% for favoriteId, favoriteData in favorite %}
+        <div class="post-favorite col-xs-12 col-sm-6 no-gutter">
+            <h2><a href="/{{favoriteId}}">{{favoriteData.title}}</a></h2>
+            <p>{{favoriteData.text}}</p>
+        </div>
+        {% endfor %}
+    </section>
+
+
+</div><!-- Home page posts -->
+
+<div class="favorites">
+    <h2>new projects</h2>
+</div>
+
+<div class="favorite-categories animated fadeIn ">
+    <div class="category row">
+        <section>
+            {% for projectId, projectData in project %}
+            <div class="category-preview col-xs-6 col-sm-4 ">
+                <h2>{{projectData.title}}</h2>
+                <a href="/{{projectData.url}}">
+                    <img src="/img/{{projectData.image}}">
+                </a>
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+</div>
+
 <div class="home-page-writing animated fadeIn ">
     {% for postId, post in writing %}
     <div class="post">
