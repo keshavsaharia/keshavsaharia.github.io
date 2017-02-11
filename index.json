@@ -3,10 +3,10 @@
 	"title": "keshav is",
 	"description": "Keshav is an educator and computer scientist.",
 
-	"favorite": {
-		"techlab": {
+	"interest": {
+		"education": {
 			"title": "Education",
-			"text": "A summary of four years "
+			"text": "I develop apps to teach kids."
 		}
 	},
 

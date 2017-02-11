@@ -1,22 +1,16 @@
 {% extends "template/sidebar.html" %}
 
 {% block content %}
-<div class="nav">
-    <a href="#" class="select-writing active">Writing</a>
-    <a href="#" class="select-building">Building</a>
-    <a href="#" class="select-coding">Coding</a>
-    <a href="#" class="select-working">Working</a>
-</div>
 <div class="favorites">
-    <h2>new writing</h2>
+    <h2>my interests</h2>
 </div>
 
 <div class="favorite-posts clearfix animated fadeIn ">
     <section>
-        {% for favoriteId, favoriteData in favorite %}
+        {% for interestId, interestData in interest %}
         <div class="post-favorite col-xs-12 col-sm-6 no-gutter">
-            <h2><a href="/{{favoriteId}}">{{favoriteData.title}}</a></h2>
-            <p>{{favoriteData.text}}</p>
+            <h2><a href="/{{interestId}}">{{interestData.title}}</a></h2>
+            <p>{{interestData.text}}</p>
         </div>
         {% endfor %}
     </section>
