@@ -42,14 +42,14 @@
     <h2>projects</h2>
 </div>
 
-<div class="favorite-categories animated fadeIn ">
+<div class="favorite-categories animated fadeIn">
     <div class="category row">
         <section>
             {% for projectId, projectData in building %}
             <div class="category-preview col-xs-6 col-sm-4 ">
                 <h2>{{projectData.title}}</h2>
-                <a href="/building/{{projectData.url}}">
-                    <img src="/img/splash/{{projectData.image}}">
+                <a href="/building/{{projectId}}">
+                    <img src="/img/{{projectData.image}}">
                 </a>
             </div>
             {% endfor %}
@@ -57,59 +57,9 @@
     </div>
 </div>
 
-<div class="home-page-writing animated fadeIn ">
-    {% for postId, post in writing %}
-    <div class="post">
-        <section>
-            <div class="post-preview col-xs-9  no-gutter">
-                <h2><a href="/writing/{{postId}}">{{post.title}}</a></h2>
-                <p>{{post.text}}</p>
-                <p class="meta">
-                    <a class="" href="category.html">{{post.date}}</a>
-                </p>
-            </div>
-
-            <div class=" col-xs-3 no-gutter">
-                <img src="img/writing/{{postId}}/square.jpg" class="user-icon">
-            </div>
-
-        </section>
-    </div>
-    {% endfor %}
-</div>
-
-<div class="home-page-coding hide animated fadeIn ">
-    <div class="category row">
-        <section>
-            {% for codeId, codeData in coding %}
-            <div class="category-preview col-xs-6 col-sm-4 ">
-                <h2>{{codeData.title}}</h2>
-                <a href="/coding/{{codeId}}">
-                    <img src="/img/coding/{{codeId}}.jpg" alt="category-image">
-                </a>
-            </div>
-            {% endfor %}
-        </section>
-    </div>
-</div>
-
-<div class="home-page-working hide animated fadeIn ">
-    <div class="category row">
-        <section>
-            {% for projectId, projectData in project %}
-            <div class="category-preview col-xs-6 col-sm-4 ">
-                <h2>{{projectData.title}}</h2>
-                <a href="{{projectData.url}}">
-                    <img src="/img/project/{{projectId}}.jpg" alt="category-image">
-                </a>
-            </div>
-            {% endfor %}
-        </section>
-    </div>
-</div>
 <div class="home-footer">
     <a href="/a">About</a>
     <i class="link-spacer"></i>
-    <a href="/terms">&copy; Keshav Saharia, 2017</a>
+    <a href="/copyrighting">&copy; Keshav Saharia, 2017</a>
 </div>
 {% endblock %}
