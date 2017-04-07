@@ -42,7 +42,8 @@ p {
 /* line 35, ../sass/_type.sass */
 a {
   text-decoration: none;
-  color: white;
+  color: #336699;
+  /*color: white;*/
   border-bottom: solid 1px #fafafa;
 }
 /* line 40, ../sass/_type.sass */
@@ -1646,6 +1647,7 @@ blockquote {
     font-size: 1.6rem;
     line-height: 22px;
     line-height: 2.2rem;
+    margin-bottom: 10px;
   }
 }
 
