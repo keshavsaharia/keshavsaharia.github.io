@@ -1,128 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Lego CNC</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A Lego machine that can carve 3D shapes out of floral foam.">
-    <meta name="author" content="Keshav Saharia">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
 
-    <title>Lego CNC</title>
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-<link href="http://keshav.is/css/style.css" rel="stylesheet">
-<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-<!--[if lt IE 9]>
-	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
 
-</head>
+    <span class="menu-trigger writer-icon animated fadeInDown">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </span>
+    <div class="hero-image hero-a-great-story" style="">
 
-<body>
-	<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-	<div class="container-fluid">
-		<div class="navbar-header page-scroll">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target="#collapse">
-				<span class="sr-only">Toggle navigation</span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="http://keshav.is">keshav.is</a>
-		</div>
-		<!--<div class="collapse navbar-collapse" id="collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="http://keshav.is/building">Projects</a></li>
-				<li><a href="http://keshav.is/writing">Writing</a></li>
-				<li><a href="http://keshav.is/teaching">Teaching</a></li>
-				<li><a href="http://keshav.is/contact">Contact</a></li>
-			</ul>
-		</div>-->
-	</div>
-</nav>
+        <!-- if the user has javascript disabled they can still use the menu -->
+        <noscript>
+            <div class="no-js-menu">
+                <ul>
+                    <li><i class="entypo-home"></i><a href="index.html">Home</a></li>
+                    <li><i class="entypo-user"></i><a href="#">John Smith</a></li>
+                    <li><i class="entypo-star"></i><a href="favorites.html">Favorites</a></li>
+                    <li><i class="entypo-chart-area"></i><a href="dashboard.html">Stats</a></li>
+                </ul>
+            </div>
+        </noscript>
+        <!-- end no script -->
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+        <div id="menu">
+            <ul>
+                <li><i class="entypo-home"></i><a href="index.html">Home</a></li>
+                <li><i class="entypo-user"></i><a href="">John Smith</a></li>
+                <li><i class="entypo-star"></i><a href="favorites.html">Favorites</a></li>
+                <li><i class="entypo-chart-area"></i><a href="dashboard.html">Stats</a></li>
+
+            </ul>
+        </div>
+        <div class="col-xs-12 main-content single-content">
+            <p class="meta">
+                <a class="" href="category.html">James Reddy</a> in <a class="" href="category.html">Storytime</a> <i class="link-spacer"></i> <i class="entypo-bookmark"></i> 23 minute read
+            </p>
+            <h1>A Great Story Never Told</h1>
+
+            <p class="subtitle">Like I said, never told...</p>
+
+            <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, integer ut elit odio. </p>
+
+            <p>building/$key</p>
 
 
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('http://keshav.is/img/splash/lego-cnc.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
-                        <h1>Lego CNC</h1>
-                        <h2 class="subheading">A Lego machine that can carve 3D shapes out of floral foam.</h2>
-                    </div>
-                </div>
+        <div class="single-footer">
+            <div class="social clearfix">
+                <a class="btn btn-writer btn-like" href="#"><i class="entypo-heart"></i>Like</a>
+                <img src="img/profile-2.jpg" class="liked-this-icon" alt="user-image">
+                <img src="img/profile-3.jpg" class="liked-this-icon" alt="user-image">
+                <img src="img/profile-5.png" class="liked-this-icon" alt="user-image">
+
+                <a class="social-icon" href="#">
+                    <i class="entypo-twitter"></i>
+                </a>
+                <a class="social-icon" href="#">
+                    <i class="entypo-facebook-squared"></i>
+                </a>
+
+            </div>
+            <div class="category-list">
+                <p>Also found in</p>
+                <ul>
+                    <li><a href="#">Stories</a></li>
+                    <li><a href="#">Life</a></li>
+                    <li><a href="#">Adventures</a></li>
+                </ul>
             </div>
         </div>
-    </header>
 
-    <!-- Post Content -->
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 content">
-                	<h1>A Lego 3D printer</h1>
-<p>CNC machines have become a recent obsession of mine, and as a result, I decided to build one out of a Lego Mindstorms NXT kit. After leaving Legos sprawled across my room for over a week and a half, I finally finished creating a machine that can manipulate a cutting tool with some impressive precision.</p>
-<p><img src="http://keshav.is/img/building/lego-cnc/PIC1.jpg" alt="" /></p>
-<h2>The tool</h2>
-<p>The cutting tool is a small hand dremel that I found on Amazon. It is excellent for cutting accurately through green floral foam.
-<br  /><img src="http://keshav.is/img/building/lego-cnc/PIC7.jpg" alt="" /></p>
-<p>The cutting tool is mounted to a somewhat intricate linear actuator that uses a worm gear for maximum precision. One rotation of the worm gear moves the dremel 3 millimeters up or down, so the Lego motor's 2.5 degree accuracy gives an z-axis accuracy of the cutting head of approximately 20 micrometers.
-<br  /><img src="http://keshav.is/img/building/lego-cnc/PIC2.jpg" alt="" /></p>
-<p>To achieve the same level of accuracy on the other axis, I used the Lego bike chain with a 24 tooth gear.
-<br  /><img src="http://keshav.is/img/building/lego-cnc/PIC3.jpg" alt="" />
-<br  /><img src="http://keshav.is/img/building/lego-cnc/PIC5.jpg" alt="" /></p>
-<p>The track that the cutting head moves on laterally has a space for the bike chain slide underneath. The yellow wheels ensure that there is no static friction when making minor adjustments to the cutting head's position.
-<br  /><img src="http://keshav.is/img/building/lego-cnc/PIC4.jpg" alt="" /></p>
-<p>Underneath the cutting table, there is another motor that drives a rack and pinion setup for the last axis of cutting head motion.
-<br  /><img src="http://keshav.is/img/building/lego-cnc/PIC6.jpg" alt="" /></p>
-<p>I used leJOS to write a Java program for controlling the cutting head, and I used Mathematica to communicate the coordinates for cutting out a 3D file. I'll update this post with screenshots of the software and rendering process when I get time.</p>
+        </div><!-- main-content/col -->
 
-                </div>
-            </div>
-        </div>
-    </article>
 
-    <hr>
+        </div> <!--/row -->
 
-    <footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-				<ul class="list-inline text-center">
-					<li><a href="https://twitter.com/queshav"> 
-						<span class="fa-stack fa-lg"> 
-							<i class="fa fa-circle fa-stack-2x"></i> 
-							<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-						</span>
-					</a></li>
-					<li><a href="https://www.linkedin.com/pub/keshav-saharia/32/61b/541"> 
-						<span class="fa-stack fa-lg"> 
-							<i class="fa fa-circle fa-stack-2x"></i> 
-							<i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-						</span>
-					</a></li>
-					<li><a href="https://github.com/keshavsaharia"> 
-						<span class="fa-stack fa-lg"> 
-							<i class="fa fa-circle fa-stack-2x"></i> 
-							<i class="fa fa-github fa-stack-1x fa-inverse"></i>
-						</span>
-					</a></li>
-				</ul>
-				<p class="copyright text-muted">Copyright &copy; Keshav Saharia 2015</p>
-			</div>
-		</div>
-	</div>
-</footer>
+    </div> <!-- /container -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script src="http://keshav.is/js/blog.js"></script>
+          <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 
-</body>
+        <script src="js/vendor/jquery.jpanelmenu.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
 
+        <script src="js/main.js"></script>
+    </body>
 </html>
