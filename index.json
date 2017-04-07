@@ -2,15 +2,75 @@
 	"title": "keshav is",
 	"description": "Keshav is an educator and computer scientist.",
 
-	"project": {
+	"render": [
+		{
+			"each": "building",
+			"markdown": "building/$key",
+			"template": "template/building"
+		}
+	],
+
+	"working": {
 		"techlab": {
 			"title": "Techlab",
 			"url": "working/on/techlab",
 			"text": ""
+		}
+	},
+
+	"building": {
+		"coffeemaker": {
+	        "title": "IoT coffeemaker",
+	        "subtitle": "An Arduino-controlled coffeemaker that is connected to the Internet.",
+	        "date": "March 25th, 2015",
+	        "image": "coffeemaker.jpg"
+	    },
+	    "basement": {
+	        "title": "Smart Basement",
+	        "text": "A two-year project to design an automated room with a voice controlled assistant in a basement.",
+	        "image": "basement.jpg"
+	    },
+		"techlab-facility": {
+			"title": "TechLab facility",
+			"subtitle": "Converting an abandoned retail location into an hackerspace.",
+			"description": "When I started my first business, I rebuilt the entire facility myself.",
+			"posted": "March 25th, 2015",
+			"splash": "basement.jpg"
 		},
-		"": {
-			"title": "",
-			"text": ""
+		"jarvis": {
+			"title": "Jarvis",
+			"subtitle": "A voice-controlled digital servant for controlling my lights.",
+			"description": "I created a voice-controlled assistant to control my lights.",
+			"posted": "March 25th, 2015",
+			"splash": "jarvis.jpg"
+		},
+		"lego-cnc": {
+			"title": "Lego CNC",
+			"subtitle": "A CNC milling machine created with Legos.",
+			"description": "A Lego machine that can carve 3D shapes out of floral foam.",
+			"posted": "September 30th, 2014",
+			"splash": "lego-cnc.jpg"
+		},
+		"lego-head": {
+			"title": "Lego head",
+			"subtitle": "A life-sized sculpture of a woman's head, created with Legos.",
+			"description": "A life-sized sculpture of a woman's head, created with Legos.",
+			"posted": "March 25th, 2015",
+			"splash": "legohead.png"
+		},
+		"speaker-backpack": {
+			"title": "IoT coffeemaker",
+			"subtitle": "An Arduino-controlled coffeemaker that is connected to the Internet.",
+			"description": "The Internet of Things is the",
+			"posted": "March 18th, 2011",
+			"splash": "coffeemaker.jpg"
+		},
+		"touchscreen-light-switch": {
+			"title": "Touchscreen light switch",
+			"subtitle": "A Linux-powered touch screen that can control lights and devices in my room.",
+			"description": "I combined some off-the-shelf electronics and a flat UI to make a simple way to control my room lights.",
+			"posted": "March 25th, 2015",
+			"splash": "touchswitch.jpg"
 		}
 	}
 }

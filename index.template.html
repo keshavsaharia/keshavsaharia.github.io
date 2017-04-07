@@ -30,7 +30,7 @@
             <h2>Languages</h2>
             <p>I speak English and Hindi fluently. I studied Spanish for three years in high school and Swahili for three years in college. I am currently learning spoken and written Mandarin.</p>
 
-            <h2>Physical Activity</h2>
+            <h2>Activities</h2>
             <p>Hiking, (long|snow|surf)boarding, wing chun, tai chi, pranayama</p>
         </div>
     </section>
@@ -45,11 +45,11 @@
 <div class="favorite-categories animated fadeIn ">
     <div class="category row">
         <section>
-            {% for projectId, projectData in project %}
+            {% for projectId, projectData in building %}
             <div class="category-preview col-xs-6 col-sm-4 ">
                 <h2>{{projectData.title}}</h2>
                 <a href="/{{projectData.url}}">
-                    <img src="/img/{{projectData.image}}">
+                    <img src="/img/splash/{{projectData.image}}">
                 </a>
             </div>
             {% endfor %}
@@ -76,21 +76,6 @@
         </section>
     </div>
     {% endfor %}
-</div>
-
-<div class="home-page-building hide animated fadeIn ">
-    <div class="category row">
-        <section>
-            {% for buildId, buildData in building %}
-            <div class="category-preview col-xs-6 col-sm-4 ">
-                <h2>{{buildData.title}}</h2>
-                <a href="/building/{{buildId}}">
-                    <img src="/img/building/{{buildId}}.jpg" alt="category-image">
-                </a>
-            </div>
-            {% endfor %}
-        </section>
-    </div>
 </div>
 
 <div class="home-page-coding hide animated fadeIn ">
