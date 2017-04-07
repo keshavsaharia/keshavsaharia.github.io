@@ -13,7 +13,7 @@
 			"each": "coding",
 			"markdown": "working/$key",
 			"template": "template/markdown",
-			"output": "working/on/$key/index.html"
+			"output": "coding/$key/index.html"
 		}
 	],
 

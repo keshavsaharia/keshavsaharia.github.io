@@ -19,9 +19,7 @@
         <span class="bar"></span>
         <span class="bar"></span>
     </span>
-    <div class="hero-image hero-a-great-story" {% if image %}style="background: url(/img/{{image}}) center center no-repeat;background-size:cover;"{% endif %}>
-
-        <!-- if the user has javascript disabled they can still use the menu -->
+    <div class="hero-image hero-a-great-story"{% if image %} style="background: url(/img/{{image}}) center center no-repeat;background-size:cover;"{% endif %}>
         <noscript>
             <div class="no-js-menu">
                 <ul>
@@ -31,8 +29,6 @@
                 </ul>
             </div>
         </noscript>
-        <!-- end no script -->
-
     </div>
 
     <div class="container">
@@ -52,35 +48,28 @@
 
                 <div class="single-footer">
                     <div class="social clearfix">
-                        <a class="btn btn-writer btn-like" href="#"><i class="entypo-heart"></i>Like</a>
-                        <img src="img/profile-2.jpg" class="liked-this-icon" alt="user-image">
-                        <img src="img/profile-3.jpg" class="liked-this-icon" alt="user-image">
-                        <img src="img/profile-5.png" class="liked-this-icon" alt="user-image">
-
                         <a class="social-icon" href="#">
                             <i class="entypo-twitter"></i>
                         </a>
                         <a class="social-icon" href="#">
                             <i class="entypo-facebook-squared"></i>
                         </a>
-
                     </div>
+
+                    {% if tag %}
                     <div class="category-list">
-                        <p>Also found in</p>
+                        <p>Tags</p>
                         <ul>
-                            <li><a href="#">Stories</a></li>
-                            <li><a href="#">Life</a></li>
-                            <li><a href="#">Adventures</a></li>
+                            {% for t in tag %}
+                            <li><a href="/tag">{{t}}</a></li>
+                            {% endfor %}
                         </ul>
                     </div>
+                    {% endif %}
                 </div>
-
-            </div><!-- main-content/col -->
-
-
-        </div> <!--/row -->
-
-    </div> <!-- /container -->
+            </div>
+        </div>
+    </div>
     {% include "js/scripts.html" %}
 </body>
 </html>
