@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="I combined some off-the-shelf electronics and a flat UI to make a simple way to control my room lights.">
+    <meta name="author" content="Keshav Saharia">
+
+    <title>Touchscreen light switch</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://keshav.is/css/style.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header page-scroll">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#collapse">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="http://keshav.is">keshav.is</a>
+		</div>
+		<!--<div class="collapse navbar-collapse" id="collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="http://keshav.is/building">Projects</a></li>
+				<li><a href="http://keshav.is/writing">Writing</a></li>
+				<li><a href="http://keshav.is/teaching">Teaching</a></li>
+				<li><a href="http://keshav.is/contact">Contact</a></li>
+			</ul>
+		</div>-->
+	</div>
+</nav>
+
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('http://keshav.is/img/splash/touchswitch.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Touchscreen light switch</h1>
+                        <h2 class="subheading">I combined some off-the-shelf electronics and a flat UI to make a simple way to control my room lights.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 content">
+                	<h1>a custom touchscreen light switch</h1>
+<p>Silicon Valley is blessed with great weather and great electronics stores. A couple months ago, I found a touch screen monitor and touch screen driver for $45 in a warehouse of surplus electronics. It was a low-risk investment in an idea to attach a touch screen to the wall hook it up to my <a href="http://keshav.is/building/jarvis">Jarvis light control system</a>. To drive the monitor, I used a miniature <a href="http://www.amazon.com/Zotac-Celeron-1-5GHz-Barebone-ZBOX-ID18-U/dp/B00FN5ZIOK/ref=sr_1_2?s=electronics&amp;ie=UTF8&amp;qid=1431225017&amp;sr=1-2&amp;keywords=zotac+mini">Linux box by Zotac</a></p>
+<p><img src="http://keshav.is/img/building/touchswitch/touchscreen.jpg" alt="" /></p>
+<p>They were relatively easy to hook up – I just slid the two ribbon cables from the touch screen into the slots on the driver. The driver takes a VGA input to display on the screen, and produces a USB output that relays touch coordinates to a computer.</p>
+<p>After setting up the touch screen, I cut a rectangle into a wood panel for the touch screen to sit in. It may be easier to use a router for this, but I used a scroll saw to avoid chipping the wood. I didn’t take too many pictures during this step, but remembered to take one as I was finishing the front.</p>
+<p><img src="http://keshav.is/img/building/touchswitch/embedded-in-panel.jpg" alt="" /></p>
+<p>I used aluminum strips to make the frame around the screen. This could have been done in a much cleaner and elegant manner if I had some effective way to cut an aluminum sheet into a rectangular frame, but I didn’t. After finishing the frame, I attached the driver to the back of the wooden panel.</p>
+<p>It’s not the most elegant construction, but a couple screws through the touch driver into the wood panel made it pretty solid. Finally, I installed the panel on the wall in my room.</p>
+<p><img src="http://keshav.is/img/building/touchswitch/attached-to-back.jpg" alt="" /></p>
+<p>I wrote a simple applet in Java that communicates with Jarvis over ssh. The current applet is the simplest possible implementation I could think of – I just created a JLabel with an image that fills the screen, then used a MouseListener with bounding boxes to convert mouse click coordinates into specific button presses. This just goes to show you that you can program a touch screen GUI in less than an hour if your implementation is simple enough.</p>
+<p><img src="http://keshav.is/img/building/interface.jpg" alt="" /></p>
+<p>Although this is a very niche implementation, it is possible to mimic this setup with a computer connected to an Arduino microcontroller that uses relays to switch lights on and off. I’ve already written about using relays to control things in a previous post, so this would just involve hooking up the Arduino to a computer and programming the GUI to send serial messages to it.</p>
+<p>I still believe the most effective light switch is a good old mechanical one, but having a touch screen on the wall adds a nice touch (pun intended) to the room. It’s a very affordable project, and can easily be customized to any lighting setup.</p>
+
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<ul class="list-inline text-center">
+					<li><a href="https://twitter.com/queshav"> 
+						<span class="fa-stack fa-lg"> 
+							<i class="fa fa-circle fa-stack-2x"></i> 
+							<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+						</span>
+					</a></li>
+					<li><a href="https://www.linkedin.com/pub/keshav-saharia/32/61b/541"> 
+						<span class="fa-stack fa-lg"> 
+							<i class="fa fa-circle fa-stack-2x"></i> 
+							<i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+						</span>
+					</a></li>
+					<li><a href="https://github.com/keshavsaharia"> 
+						<span class="fa-stack fa-lg"> 
+							<i class="fa fa-circle fa-stack-2x"></i> 
+							<i class="fa fa-github fa-stack-1x fa-inverse"></i>
+						</span>
+					</a></li>
+				</ul>
+				<p class="copyright text-muted">Copyright &copy; Keshav Saharia 2015</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="http://keshav.is/js/blog.js"></script>
+
+</body>
+
+</html>

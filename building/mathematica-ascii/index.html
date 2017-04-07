@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Generates text artwork from an image.">
+    <meta name="author" content="Keshav Saharia">
+
+    <title>ASCII art generator</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://keshav.is/css/style.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header page-scroll">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#collapse">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="http://keshav.is">keshav.is</a>
+		</div>
+		<!--<div class="collapse navbar-collapse" id="collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="http://keshav.is/building">Projects</a></li>
+				<li><a href="http://keshav.is/writing">Writing</a></li>
+				<li><a href="http://keshav.is/teaching">Teaching</a></li>
+				<li><a href="http://keshav.is/contact">Contact</a></li>
+			</ul>
+		</div>-->
+	</div>
+</nav>
+
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('http://keshav.is/img/splash/ascii.png')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>ASCII art generator</h1>
+                        <h2 class="subheading">Generates text artwork from an image.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 content">
+                	<h1>Generating ASCII Art in Mathematica</h1>
+<p>While working at <a href="https://wolfram.com">Wolfram Research</a>, I did several projects with Mathematica's image processing functionality. I also did a couple fun side projects like <a href="http://keshav.is/building/waldo-finder">finding Waldo in a Where's Waldo image</a> or <a href="http://keshav.is/building/arduinolink">controlling a robotic turret</a> to point a laser at my hand. This is another neat example, where image processing functions are used to generate ASCII art.</p>
+<p>ASCII stands for American Standard Code for Information Interchange, and gives a standard numeric value for all characters. For example, the letter &ldquo;a&rdquo; has the ASCII number of 97 (capital &ldquo;A&rdquo; is 65). Below is a table of the full correspondence between decimal numbers and their corresponding characters.</p>
+<p><img src="http://benborowiec.com/wp-content/uploads/2011/07/better_ascii_table.jpg" alt="" /></p>
+<p>The term &ldquo;ASCII art&rdquo; originates from the early Internet, where only text could be transmitted. Images were created by cleverly placing characters to create the illusion of an image (a quick Google search will yield many examples). In the spirit of Mathematica, I defined a function <code>ASCIIart</code> to iterate over the pixels of an image, convert each pixel to text based on intensity, and return a string representation of the result. I also defined <code>ASCIIimage</code> to rasterize the output of <code>ASCIIart</code>.</p>
+<p><img src="http://keshav.is/img/building/ascii/1.jpg" alt="" /></p>
+<p>Here is an example where I convert the webcam input from <code>CurrentImage</code> to ASCII art.</p>
+<p><img src="http://keshav.is/img/building/ascii/2.jpg" alt="" /></p>
+<p>The function can be applied to any image‚ like this example on an image imported from a URL.</p>
+<p><img src="http://keshav.is/img/building/ascii/3.jpg" alt="" /></p>
+<p>An input image is first normalized and converted to grayscale. Each pixel in the image is replaced with two characters based on its light intensity. For example, a light gray pixel is converted to a <code>.</code> (period and space), while a dark gray pixel is converted to a <code>::</code> (two colons). After playing with the mapping from pixel intensity to text, a pretty good thresholding can be found that accurately represents the spectrum of gray values.</p>
+<p>Here is a closer look at a couple lines of text that are part of an ASCII image.</p>
+<p><img src="http://keshav.is/img/building/ascii/4.jpg" alt="" /></p>
+<p>The lines of text above are part of the image below.</p>
+<p><img src="http://keshav.is/img/building/ascii/5.jpg" alt="" /></p>
+
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<ul class="list-inline text-center">
+					<li><a href="https://twitter.com/queshav"> 
+						<span class="fa-stack fa-lg"> 
+							<i class="fa fa-circle fa-stack-2x"></i> 
+							<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+						</span>
+					</a></li>
+					<li><a href="https://www.linkedin.com/pub/keshav-saharia/32/61b/541"> 
+						<span class="fa-stack fa-lg"> 
+							<i class="fa fa-circle fa-stack-2x"></i> 
+							<i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+						</span>
+					</a></li>
+					<li><a href="https://github.com/keshavsaharia"> 
+						<span class="fa-stack fa-lg"> 
+							<i class="fa fa-circle fa-stack-2x"></i> 
+							<i class="fa fa-github fa-stack-1x fa-inverse"></i>
+						</span>
+					</a></li>
+				</ul>
+				<p class="copyright text-muted">Copyright &copy; Keshav Saharia 2015</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="http://keshav.is/js/blog.js"></script>
+
+</body>
+
+</html>

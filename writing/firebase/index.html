@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Firebase is a real-time backend that lets you easily build a real-time app, and is an invaluable tool for education.">
+    <meta name="author" content="Keshav Saharia">
+
+    <title>What we do with Firebase</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://keshav.is/css/style.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header page-scroll">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#collapse">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="http://keshav.is">keshav.is</a>
+		</div>
+		<!--<div class="collapse navbar-collapse" id="collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="http://keshav.is/building">Projects</a></li>
+				<li><a href="http://keshav.is/writing">Writing</a></li>
+				<li><a href="http://keshav.is/teaching">Teaching</a></li>
+				<li><a href="http://keshav.is/contact">Contact</a></li>
+			</ul>
+		</div>-->
+	</div>
+</nav>
+
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('http://keshav.is/img/splash/numbers.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>What we do with Firebase</h1>
+                        <h2 class="subheading">Firebase is a real-time backend that lets you easily build a real-time app, and is an invaluable tool for education.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                	<h1>Getting kids started with Firebase</h1>
+<p>At <a href="https://keshav.is/building/techlab">techlab</a>, we held an experimental web development class where students build simple web applications with <a href="https://firebase.com">Firebase</a>, a cloud service that makes it easy to store and retrieve data in real-time. We would first build a simple mockup of a website with HTML and CSS, then write functions to change the website content with jQuery. Then we use Firebase to pass data to the jQuery functions, and with a few lines of code produce a real-time communication tool.</p>
+<h2>Before you start</h2>
+<p>Each student needs a computer with a web browser and a code editor (I recommend <a href="http://www.sublimetext.com/">Sublime Text</a> or <a href="http://www.barebones.com/products/textwrangler/">TextWrangler</a>). Start by having students create a file with the text editor, saving it immediately as &ldquo;welcome.html&rdquo;, then locating it on their computer and opening it with the web browser. Doing this quickly ingrains a development cycle of switching back and forth between the editor and browser as they make changes.</p>
+<h2>HTML</h2>
+<p>The most effective analogy I have for HyperText Markup Language is that &ldquo;HTML is like the structure of your house. The structure of your house defines where your roof is, where your floors are, and where the walls go to divide up the space inside.&rdquo; Students then construct a really simple HTML page with a header, a paragraph, an input box, and a button.</p>
+<pre><code class="html">&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;This is a header&lt;/h1&gt;
+        &lt;p&gt;This is a paragraph&lt;/p&gt;
+        &lt;input&gt;
+        &lt;button&gt;submit&lt;/button&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2>CSS</h2>
+<p>&ldquo;CSS is like the paintings, decorations, and furniture that you put inside your house. They give your house a personal touch, and if you really put some thought into it, you can create something that evokes emotions and inspires people.&rdquo; I will then quickly scroll through libraries like <a href="http://getbootstrap.com/">Bootstrap</a> and <a href="https://designmodo.github.io/Flat-UI/">Flat UI</a>, and finish with a look at Google's <a href="http://www.google.com/design/spec/material-design/introduction.html">Material Design specification</a>. I tend to spend the most time on material design because every kid has interacted with Google products, and can draw parallels from the specification to what they see in the real world.</p>
+<p>To avoid confusing them over the existance of multiple files, I have them add the CSS into a <code>style</code> element on the first page, and save the explanation of linking CSS files for future projects. I first show the structure for styling each visible element in the page: <code>body</code>, <code>h1</code>, <code>p</code>, <code>input</code>, and <code>button</code>.</p>
+<pre><code class="html">&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+        body {
+            /* body styles here */
+        }
+        h1 {
+            /* heading styles here */
+        }
+        p {
+            /* paragraph styles here */
+        }
+        input {
+            /* input styles here */
+        }
+        button {
+            /* button styles here */
+        }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;This is a header&lt;/h1&gt;
+        &lt;p&gt;This is a paragraph&lt;/p&gt;
+        &lt;input&gt;
+        &lt;button&gt;submit&lt;/button&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>[ add link to a complete example file with HTML and CSS ]</p>
+<p>The pattern for styling elements becomes clear to them, and they can start experimenting with things like <code>border-radius</code> on buttons and <code>font-size</code> for their paragraphs. I also have them really put thought into margins, paddings, and colors. It is important at this step that students are looking at what other students are doing, so they can get some inspiration and avoid becoming lazy designers.</p>
+<h2>JavaScript</h2>
+<p>&ldquo;JavaScript is like the people in the house. They can change the decorations, add new furniture, tear down walls and erect new ones, and most importantly, communicate with their friends in other houses.&rdquo; I then explain to them that we're going to connect our &ldquo;HTML houses&rdquo; together by sharing whatever text we add to the input field with Firebase. I tell them to start by thinking of Firebase as &ldquo;a group text message, where anyone sending a message will buzz the phones of everyone else&rdquo;.</p>
+<p>I have them pair up with the person next to them and walk through the steps of <a href="https://www.firebase.com/signup/">creating a Firebase account</a>. Once they have created an account, have them create a new Firebase and double click on it to view its content.</p>
+<p>[picture of Forge]</p>
+<p>If you prefer students not have an account, or are concerned with their ability to follow the relatively simple setup steps, you can create and share Firebase URLs with them. They will then need to add a <code>script</code> element to their page in <code>body</code>, and import the <a href="">Firebase API</a> and <a href="">jQuery</a>, as shown below.</p>
+<pre><code class="html">&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+        /* styles go here */
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;This is a header&lt;/h1&gt;
+        &lt;p&gt;This is a paragraph&lt;/p&gt;
+        &lt;input&gt;
+        &lt;button&gt;submit&lt;/button&gt;
+        &lt;!-- 
+            Give students an easy way to copy this JavaScript template, e.g. through PasteBin (pastebin.com)
+        --&gt;
+        &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"&gt;&lt;/script&gt;
+        &lt;script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript"&gt;
+
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Once they've created the JavaScript layout, we write functions to describe each event that could occur when our application is run.
+<br  />[ more explanation about events and JavaScript functions ]</p>
+<p>[ explanation of .on ]</p>
+<p>[ explanation of .val ]</p>
+<p>Remember to replace <code>[YOUR-FIREBASE-HERE]</code> with the name of your Firebase.</p>
+<pre><code class="javascript">var firebase = new Firebase("https://[YOUR-FIREBASE-HERE].firebaseio.com");
+
+// When the application is started.
+function start() {
+    firebase.on('value', message);
+    $('button').on('click', submit);
+}
+
+// When the submit button is clicked.
+function submit() {
+    firebase.set( $('input').val() );
+    $('input').val('');
+}
+
+// When a message is received.
+function message(data) {
+    $('p').text( data.val() );
+}
+
+// When the document is ready, do the start function.
+$(document).ready( start );
+</code></pre>
+<p>[ look up jQuery selector - CSS selector analogy and add here ]</p>
+<p>They can then customize their application to prompt the user on what information to share, like compliments or advice. I encourage students to form and merge their groups organically, while the instructors ensure no student is left working alone.</p>
+<pre><code class="html">&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+        /* styles go here */
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Share a compliment&lt;/h1&gt;
+        &lt;p&gt; &lt;/p&gt;
+        &lt;input&gt;w
+        &lt;button&gt;submit compliment&lt;/button&gt;
+        &lt;!-- 
+            Give students an easy way to copy this JavaScript template, e.g. through PasteBin (pastebin.com)
+        --&gt;
+        &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"&gt;&lt;/script&gt;
+        &lt;script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript"&gt;
+            var firebase = new Firebase("https://[YOUR-FIREBASE-HERE].firebaseio.com");
+
+            function start() {
+                firebase.on('value', message);
+                $('button').on('click', submit);
+            }
+
+            function submit() {
+                firebase.set( $('input').val() );
+                $('input').val('');
+            }
+
+            function message(data) {
+                $('p').text(data.val());
+            }
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2>Share it</h2>
+<p>Students can email their HTML file to anyone who they want to use their app, or use the <a href="">Firebase command line tools</a> to upload their work to Firebase Hosting. If there are privacy concerns over student data, the instructor can create multiple Firebases and set up the Firebase command line tool with their account beforehand.</p>
+
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<ul class="list-inline text-center">
+					<li><a href="https://twitter.com/queshav"> 
+						<span class="fa-stack fa-lg"> 
+							<i class="fa fa-circle fa-stack-2x"></i> 
+							<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+						</span>
+					</a></li>
+					<li><a href="https://www.linkedin.com/pub/keshav-saharia/32/61b/541"> 
+						<span class="fa-stack fa-lg"> 
+							<i class="fa fa-circle fa-stack-2x"></i> 
+							<i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+						</span>
+					</a></li>
+					<li><a href="https://github.com/keshavsaharia"> 
+						<span class="fa-stack fa-lg"> 
+							<i class="fa fa-circle fa-stack-2x"></i> 
+							<i class="fa fa-github fa-stack-1x fa-inverse"></i>
+						</span>
+					</a></li>
+				</ul>
+				<p class="copyright text-muted">Copyright &copy; Keshav Saharia 2015</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="http://keshav.is/js/blog.js"></script>
+
+</body>
+
+</html>

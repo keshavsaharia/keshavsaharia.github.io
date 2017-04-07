@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A short exercise for students in a coding class, to help them appreciate a computer's ability to work with huge numbers.">
+    <meta name="author" content="Keshav Saharia">
+
+    <title>Big Numbers</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://keshav.is/css/style.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header page-scroll">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#collapse">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="http://keshav.is">keshav.is</a>
+		</div>
+		<!--<div class="collapse navbar-collapse" id="collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="http://keshav.is/building">Projects</a></li>
+				<li><a href="http://keshav.is/writing">Writing</a></li>
+				<li><a href="http://keshav.is/teaching">Teaching</a></li>
+				<li><a href="http://keshav.is/contact">Contact</a></li>
+			</ul>
+		</div>-->
+	</div>
+</nav>
+
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('http://keshav.is/img/splash/numbers.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Big Numbers</h1>
+                        <h2 class="subheading">A short exercise for students in a coding class, to help them appreciate a computer's ability to work with huge numbers.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                	<p>I visit programming classes as part of my work on <a href="https://pythonroom.com">Pythonroom</a>, and sometimes I find myself in the situation where I only have 15 minutes to get kids excited about coding in Python. Printing text is boring, and doing anything more complex than printing requires context to make it interesting. Computing started as a way to deal with big numbers and complex operations that humans have difficulty with, so I start by talking about big numbers.</p>
+<h2>Getting started</h2>
+<p>I'll first show them simple mathematics operations and variables. This seems to come intuitively to most kids who have explored these ideas in a math class, and is primarily a way to get them comfortable with running python through the command line interface. So to get started, I have them open Terminal, type <code>python</code>, and hit Enter.</p>
+<p>Once Python has launched, they can enter mathematical statements after the <code>&gt;&gt;&gt;</code> prompt, press Enter, and see the result of the statement print out below.</p>
+<p><img src="http://keshav.is/img/writing/big-numbers/terminal.png" alt="" /></p>
+<p>I show them how they can save their numbers in a variable, by entering something like <code>a = 1 + 2 * 3 - ...</code>. Once they've stored a number, they can retrieve it by simply typing <code>a</code>, or using it in another expression like <code>a * a</code>, or even using it with other variables.</p>
+<p>In about 2 - 5 minutes, every student will be familiar with</p>
+<ul>
+<li>opening Python from the command line</li>
+<li>adding (<code>+</code>), subtracting (<code>-</code>), multiplying (<code>*</code>), and dividing (<code>/</code>) in Python</li>
+<li>storing values into variables (e.g. <code>a = 1234</code>, <code>b = 567</code>)</li>
+</ul>
+<h2>The challenge</h2>
+<p>I then give students one minute to write a program that creates the biggest number they possibly can, as measured by number of digits. The only requirements are that the program runs in approximately one second or less (to prevent time-consuming operations or infinite loops printing out endlessly large numbers).</p>
+<p>Before I say &ldquo;go!&ldquo;, I show them a short sample program, so they have a concrete idea of what they're trying to accomplish - <em>create a bigger number than the one I have</em>.</p>
+<pre><code class="python">big = 99999999999999999999999999
+</code></pre>
+<p>I also show them how to measure the number of digits in their number. Assuming they stored the number in a variable called <code>big</code>, <code>str(big)</code> converts the number into text, and <code>len( str(big) )</code> gives the length of that piece of text.</p>
+<p><img src="http://keshav.is/img/writing/big-numbers/terminal2.png" alt="" /></p>
+<p>A few students will limit their solution to the naivety of my example, and begin furiously press one numeric key (usually the 9) in a comical display of pushing premature <a href="https://en.wikipedia.org/wiki/Phalanx_bone">phalanges</a> to their limit. Most will realize that they can use a piano-like motion of their fingers to summon a stream of digits from the keyboard. The enterprising student who knows of of the copy-and-paste keyboard shortcuts will first type the longest number possible, then paste it as many times as possible. The most brilliant of the copy-and-paste practicioners will copy and paste a fragment of a mathematical statement to create an expression that produces a large number.</p>
+<pre><code class="python">big = 9999999999 * 9999999999 * 9999999999 * 9999999999 * 9999999999 * 9999999999 * ...
+</code></pre>
+<p>Most students will have numbers with hundreds of digits, and a few may have numbers with thousands. Some students already know of the exponent operator <code>**</code>, and such</p>
+<p>There is an even rarer student, who has the mathematical intuition to apply the exponent operator <code>**</code> correctly to this challenge. Even choosing <code>99999 ** 9999</code> (99999 to the power of 9999) will produce a number with 50,000 digits, far greater than what can be achieved by all but the fastest copy-and-pasting methods. There is the simple and elegant <code>print 7 ** 7 ** 7</code> (7 to the power of 7 to the power of 7, or 7 to the power of 823543) producing a number with 695,976 digits. The calculation of even larger exponents will take anywhere from a few minutes to several days.</p>
+<p>After a minute, I write down a leaderboard, share some of the winning answers, and give them an opportunity to try again. The second time they attempt to create a large number, nearly every student will use exponentiation to find the balance between calculation speed and resulting size of the number. A maximum time of 3 seconds should be imposed on calculating numbers, as allowing students to wait longer tends to leave them idle while the computer tries to conceive a number that may take hours to assemble.</p>
+<h2>Binary operators</h2>
+<p>The lesson provides a great segue into binary representation - the way numbers are stored in a computer. I'll show them other operators like <code>&lt;&lt;</code>, the <a href="https://en.wikipedia.org/wiki/Logical_shift">logical shift</a>. The kids will pay much closer attention to a bland mathematical topic when it is akin to an arms race, each student trying to assemble an arsenal of operators to outperform the others.</p>
+<h2>Why understand big numbers?</h2>
+<p>The key to winning the big number contest is an intuitive understanding for how numbers get bigger, which also happens to be the key to understanding how computational processes get longer. Suppose you wish to compute the Fibonacci sequence of 1, 1, 2, 3, 5, 8, 13, 21, 34, &hellip; (where each number is the sum of the two that precede it). You could write a Python function that takes in a number <code>n</code>, and produces the <code>n</code>th Fibonacci number by either producing <code>1</code> if you are asking for the 1st or 2nd number, or producing the sum of the two preceding Fibonacci numbers for any other number.</p>
+<pre><code class="python">def fib(n):
+    if n &lt; 3:
+        return 1
+    else:
+        return fib(n - 1) + fib(n - 2)
+
+# Print out the first 50 numbers
+for x in range(1, 50):
+    print "fib(" + str(x) + ") = " + fib(x)
+</code></pre>
+<p>When students run this program, they will see the Fibonacci sequence printing out, but each successive term will take an exponentially longer time to calculate. I'll first explain to them how the <code>fib</code> function is akin to asking a question - &ldquo;give me the <code>n</code>th Fibonacci number&rdquo;. Then, I draw out the method calls, so it becomes more intuitive why it is taking longer and longer to calculate the next number.</p>
+<p><img src="https://upload.wikimedia.org/wikibooks/en/3/37/Algorithms-F6CallTree.png" alt="" /></p>
+<p>Asking <code>fib</code> for the 6th Fibonacci number involves it asking <code>fib</code> for the 5th and 4th Fibonacci number. For each number, <code>fib</code> is used two times, so the total number of questions asked increases <em>exponentially</em>.</p>
+<h2>End it with a story</h2>
+<p>There is the legend of the creator of chess, whose board game was so captivating that he was invited to a king's court to ask for a reward of his own choosing. He did not seek royal status or riches - only rice. He asked the king to place one grain of rice on the first square of the chessboard, then place two grains on the next square, and so on. He asked that the king keep doubling the amount of rice on each square, and give him the total amount of rice on the chessboard. The king immediately agreed to the seemingly modest request.</p>
+<pre><code class="python">rice = 1
+riceOnSquare = []
+
+# For 64 squares
+for square in range(64):
+    riceOnSquare.append(rice)   # Put the rice on the square
+    rice = rice * 2             # Double the amount of rice
+
+print sum(riceOnSquare)
+</code></pre>
+<p>The total number of rice grains would be <code>18446744073709551615</code>, which would be more rice than all the kingdoms of the world could produce in a million years.</p>
+
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<ul class="list-inline text-center">
+					<li><a href="https://twitter.com/queshav"> 
+						<span class="fa-stack fa-lg"> 
+							<i class="fa fa-circle fa-stack-2x"></i> 
+							<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+						</span>
+					</a></li>
+					<li><a href="https://www.linkedin.com/pub/keshav-saharia/32/61b/541"> 
+						<span class="fa-stack fa-lg"> 
+							<i class="fa fa-circle fa-stack-2x"></i> 
+							<i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+						</span>
+					</a></li>
+					<li><a href="https://github.com/keshavsaharia"> 
+						<span class="fa-stack fa-lg"> 
+							<i class="fa fa-circle fa-stack-2x"></i> 
+							<i class="fa fa-github fa-stack-1x fa-inverse"></i>
+						</span>
+					</a></li>
+				</ul>
+				<p class="copyright text-muted">Copyright &copy; Keshav Saharia 2015</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="http://keshav.is/js/blog.js"></script>
+
+</body>
+
+</html>
