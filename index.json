@@ -5,7 +5,7 @@
 	"render": [
 		{
 			"each": "building",
-			"markdown": "building/$key",
+			"markdown": "markdown/building/$key",
 			"template": "template/markdown",
 			"output": "building/$key/index.html"
 		},
