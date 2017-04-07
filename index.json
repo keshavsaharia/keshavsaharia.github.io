@@ -6,7 +6,14 @@
 		{
 			"each": "building",
 			"markdown": "building/$key",
-			"template": "template/building"
+			"template": "template/markdown",
+			"output": "building/$key/index.html"
+		},
+		{
+			"each": "working",
+			"markdown": "working/$key",
+			"template": "template/markdown",
+			"output": "working/on/$key/index.html"
 		}
 	],
 
