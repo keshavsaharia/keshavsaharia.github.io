@@ -2163,3 +2163,6 @@ html {
 .bs-example {
   margin-bottom: 20px;
 }
+.markdown img {
+    width: 100%;
+}
