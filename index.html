@@ -13,7 +13,7 @@
 <body>
     <div class="container home-container">
         <div class="row">
-			<div class="sidebar col-md-5 col-sm-12" style="background:url(/img/tall-bg.png) no-repeat center center;">
+			<div class="sidebar col-md-5 col-sm-12" style="background:url(/img/background/tall.png) no-repeat center center;">
 				<div class="site-info">
 					<div class="primary-info">
 						<h1>keshav saharia is</h1>
@@ -55,7 +55,7 @@
                 <p><a href="http://microbit.org/">BBC Microbit Foundation</a> - US education partner through <a href="https://techlab.education">Techlab</a>.</p>
 
             <h2>Languages</h2>
-            <p>I speak English and Hindi fluently. I studied Spanish for three years in high school and Swahili for three years in college. I am currently learning Mandarin.</p>
+            <p>I speak English and Hindi fluently. I studied Spanish for three years in high school and Swahili for three years in college. I am currently learning spoken and written Mandarin.</p>
 
             <h2>Physical Activity</h2>
             <p>Hiking, (long|snow|surf)boarding, wing chun, tai chi, pranayama</p>
@@ -66,7 +66,7 @@
 </div><!-- Home page posts -->
 
 <div class="favorites">
-    <h2>new projects</h2>
+    <h2>projects</h2>
 </div>
 
 <div class="favorite-categories animated fadeIn ">
@@ -141,7 +141,12 @@
             </div>
         </div>
     </div>
-
+    <script>
+    if (document.URL.indexOf('http://localhost') != 0 &&
+        document.URL.indexOf('http://') == 0) {
+        window.location.replace('https://' + document.URL.substring(7));
+    }
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
     <script src="/js/vendor/jquery.jpanelmenu.min.js"></script>
