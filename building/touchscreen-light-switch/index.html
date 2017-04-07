@@ -19,7 +19,7 @@
         <span class="bar"></span>
         <span class="bar"></span>
     </span>
-    <div class="hero-image hero-a-great-story" style="background: url(/img/splash/) center center no-repeat;">
+    <div class="hero-image hero-a-great-story" style="background: url(/img/splash/splash/touchswitch.jpg) center center no-repeat;background-size:cover;">
 
         <!-- if the user has javascript disabled they can still use the menu -->
         <noscript>
@@ -46,16 +46,22 @@
             </div>
             <div class="col-xs-12 main-content single-content">
                 <p class="meta">
-                    <a class="" href="/">Keshav Saharia</a> in
-                    <a class="" href="/"></a>
-                    <i class="link-spacer"></i>
-                    <i class="entypo-bookmark"></i> March 25th, 2015
+                    <a href="/">Keshav Saharia</a> on March 25th, 2015
                 </p>
-                <h1>Touchscreen light switch</h1>
+                <h1 id="a-custom-touchscreen-light-switch">a custom touchscreen light switch</h1>
+<p>Silicon Valley is blessed with great weather and great electronics stores. A couple months ago, I found a touch screen monitor and touch screen driver for $45 in a warehouse of surplus electronics. It was a low-risk investment in an idea to attach a touch screen to the wall hook it up to my <a href="/building/jarvis">Jarvis light control system</a>. To drive the monitor, I used a miniature <a href="http://www.amazon.com/Zotac-Celeron-1-5GHz-Barebone-ZBOX-ID18-U/dp/B00FN5ZIOK/ref=sr_1_2?s=electronics&amp;ie=UTF8&amp;qid=1431225017&amp;sr=1-2&amp;keywords=zotac+mini">Linux box by Zotac</a></p>
+<p><img src="/img/building/touchswitch/touchscreen.jpg" alt=""></p>
+<p>They were relatively easy to hook up � I just slid the two ribbon cables from the touch screen into the slots on the driver. The driver takes a VGA input to display on the screen, and produces a USB output that relays touch coordinates to a computer.</p>
+<p>After setting up the touch screen, I cut a rectangle into a wood panel for the touch screen to sit in. It may be easier to use a router for this, but I used a scroll saw to avoid chipping the wood. I didn�t take too many pictures during this step, but remembered to take one as I was finishing the front.</p>
+<p><img src="/img/building/touchswitch/embedded-in-panel.jpg" alt=""></p>
+<p>I used aluminum strips to make the frame around the screen. This could have been done in a much cleaner and elegant manner if I had some effective way to cut an aluminum sheet into a rectangular frame, but I didn�t. After finishing the frame, I attached the driver to the back of the wooden panel.</p>
+<p>It�s not the most elegant construction, but a couple screws through the touch driver into the wood panel made it pretty solid. Finally, I installed the panel on the wall in my room.</p>
+<p><img src="/img/building/touchswitch/attached-to-back.jpg" alt=""></p>
+<p>I wrote a simple applet in Java that communicates with Jarvis over ssh. The current applet is the simplest possible implementation I could think of � I just created a JLabel with an image that fills the screen, then used a MouseListener with bounding boxes to convert mouse click coordinates into specific button presses. This just goes to show you that you can program a touch screen GUI in less than an hour if your implementation is simple enough.</p>
+<p><img src="/img/building/interface.jpg" alt=""></p>
+<p>Although this is a very niche implementation, it is possible to mimic this setup with a computer connected to an Arduino microcontroller that uses relays to switch lights on and off. I�ve already written about using relays to control things in a previous post, so this would just involve hooking up the Arduino to a computer and programming the GUI to send serial messages to it.</p>
+<p>I still believe the most effective light switch is a good old mechanical one, but having a touch screen on the wall adds a nice touch (pun intended) to the room. It�s a very affordable project, and can easily be customized to any lighting setup.</p>
 
-                <p class="subtitle">A Linux-powered touch screen that can control lights and devices in my room.</p>
-
-                
 
                 <div class="single-footer">
                     <div class="social clearfix">
