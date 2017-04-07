@@ -1384,7 +1384,7 @@ ol li {
 .hero-image {
   height: 150px;
   width: 100%;
-  background: url(../img/default-cover.jpg) center center no-repeat;
+  background: url(/img/background/markdown.jpg) center center no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
