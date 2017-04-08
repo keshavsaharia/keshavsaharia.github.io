@@ -112,5 +112,22 @@
 			"posted": "March 25th, 2015",
 			"image": "splash/touchswitch.jpg"
 		}
+	},
+
+	"writing": {
+	    "big-numbers": {
+	        "title": "Big Numbers",
+	        "subtitle": "My strategy for introducing students to mathematical operators with Python code.",
+	        "description": "A short exercise for students in a coding class, to help them appreciate a computer's ability to work with huge numbers.",
+	        "posted": "March 25th, 2015",
+	        "splash": "numbers.jpg"
+	    },
+	    "halting-problem": {
+	        "title": "The Halting Problem",
+	        "subtitle": "An code-based explanation for those studying computability theory.",
+	        "description": "Can you make a program that determines if another program will run forever or terminate?",
+	        "posted": "June 5th, 2015",
+	        "splash": "numbers.jpg"
+	    }
 	}
 }
