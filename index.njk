@@ -1,37 +1,19 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Keshav Saharia</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="/assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+		{% include "include/meta.njk" %}
+		{% include "include/css.njk" %}
 	</head>
 	<body>
 		<div id="page-wrapper">
 			<header id="header" class="alt">
 				<h1><a href="/">Keshav Saharia</a></h1>
 				<nav>
-					<a href="/building">Building</a>
-					<a href="/writing">Writing</a>
-					<a href="/coding">Coding</a>
-					<a href="/traveling">Traveling</a>
+					{% for categoryId in category %}
+						<a href="/{{ categoryId }}">{{ categoryId }}</a>
+					{% endfor %}
 				</nav>
 			</header>
-			<nav id="menu">
-				<div class="inner">
-					<h2>Explore</h2>
-					<ul class="links">
-						<li><a href="index.html">keshav.is/building</a></li>
-						<li><a href="generic.html">keshav.is/writing</a></li>
-						<li><a href="elements.html">keshav.is/coding</a></li>
-						<li><a href="#">keshav.is/traveling</a></li>
-					</ul>
-					<a href="#" class="close">Close</a>
-				</div>
-			</nav>
 			<section id="banner">
 				<div class="inner">
 					<h2>
