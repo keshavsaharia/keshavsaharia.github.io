@@ -1,0 +1,10 @@
+.article {
+	max-width: 800px;
+}
+.article img {
+	width: 100% !important;
+	margin-top: 20px;
+}
+.article p {
+	margin-bottom: 20px;
+}

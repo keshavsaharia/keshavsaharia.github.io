@@ -9,10 +9,11 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
 	</head>
-	<body>
+	<body style="background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url('/img/bg.jpg');">
 		<div id="page-wrapper">
 			<header id="header" class="alt">
-				<h1><a href="/">Keshav Saharia</a></h1>
+				<a style="font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:1px;border:none;"
+					class="name" href="/">Keshav Saharia</a>
 				<nav>
 					<a href="/building">Building</a>
 					<a href="/writing">Writing</a>
@@ -20,26 +21,16 @@
 					<a href="/traveling">Traveling</a>
 				</nav>
 			</header>
-			<nav id="menu">
-				<div class="inner">
-					<h2>Explore</h2>
-					<ul class="links">
-						<li><a href="index.html">keshav.is/building</a></li>
-						<li><a href="generic.html">keshav.is/writing</a></li>
-						<li><a href="elements.html">keshav.is/coding</a></li>
-						<li><a href="#">keshav.is/traveling</a></li>
-					</ul>
-					<a href="#" class="close">Close</a>
-				</div>
-			</nav>
 			<section id="banner">
 				<div class="inner">
 					<h2>
 						<strong id="quote">I make code and stuff.</strong>
 						<!-- <br><small style="font-size:0.5em;margin-left:50px;">- <span id="author">mom</span></small> -->
 					</h2>
-					<p style="text-transform:none">I've created <a href="#coding">websites that reach millions of people</a>,
-						sold <a href="#education">two startup companies</a>, written down various <a>thoughts</a> I've had, and <a href="#projects">built several interesting projects</a> in my free time.</p>
+					<p style="text-transform:none">I create
+						<a href="#coding">websites that reach millions of people</a>,
+						write down <a href="#thoughts">my thoughts</a> every now and then,
+						and <a href="#projects">build various projects</a> in my free time.</p>
 				</div>
 			</section>
 			<section id="wrapper">
@@ -48,8 +39,8 @@
 						<a href="#" class="image"><img src="/img/teaching/java.png" alt="" /></a>
 						<div class="content">
 							<h2 class="major">I design innovative education content.</h2>
-							<p>In early 2013, I started <a href="https://techlab.education">Techlab Education</a> to bring high-quality computer science education to kids in the Bay Area. I scaled summer camp operations over multiple locations, designed innovative technology curriculum, and after selling the business in 2018, continue to serve as an advisor and board member.</p>
-							<p>In late 2014, I co-founded an education technology startup <a href="https://hulaloop.io">Hulaloop</a>, which brought the <a href="https://pythonroom.com">Pythonroom</a> teaching tool to over half a million students around the world. In 2017, Hulaloop was acquired by <a href="https://tynker.com">Tynker</a>, and the innovative coding platform and teaching methodology we developed for teaching Python now reaches over 60 million kids.</p>
+							<p>In early 2013, I started <a target="_blank" href="https://techlab.education">Techlab Education</a> to bring high-quality computer science education to kids in the Bay Area. I scaled summer camp operations over multiple locations, designed innovative technology curriculum, and after <a target="_blank" href="https://techlab.education/relaunch">selling the business</a> in 2018, continue to serve as an advisor and board member.</p>
+							<p>In late 2014, I co-founded an education technology startup <a target="_blank" href="https://hulaloop.io">Hulaloop</a>, which brought the <a target="_blank" href="https://pythonroom.com">Pythonroom</a> teaching tool to over half a million students around the world. In 2017, Hulaloop was <!--TODO: acquisition link--><a href="">acquired</a> by <a target="_blank" href="https://tynker.com">Tynker</a>, and the innovative coding platform and teaching methodology we developed for teaching Python now reaches over 60 million kids.</p>
 							<a href="/teaching" class="special">Check out my education projects</a>
 						</div>
 					</div>
@@ -60,7 +51,7 @@
 						<div class="content">
 							<h2 class="major">I enjoy learning outside my area of expertise.</h2>
 							<p>
-								I know several languages, most recently working on improving my <a href="/learning/mandarin">conversational Mandarin</a>, and can converse well in Spanish and Hindi. I also made <a href="http://kitafi.com">this website to teach the Swahili language</a> after studying it for three years in college. I practice the <a href="/learning/wing-chun">Wing Chun</a> style of martial arts, and lived in China from late 2015 to early 2016 studying kung fu, Tai Chi, and Qi Gong, under my Sifu Wong Long-fai.
+								I know several languages, most recently working on improving my <a href="/learning/mandarin">conversational Mandarin</a>, and can converse well in Spanish and Hindi. I also made <a href="http://kitafi.com">this website to teach the Swahili language</a> after studying it for three years in college, and have extensively researched East African culture. I practice the <a href="/learning/wing-chun">Wing Chun</a> style of martial arts, and lived in China from late 2015 to early 2016 studying kung fu, Tai Chi, and Qi Gong, under Sifu Wong Long-fai.
 							</p>
 							<p>
 								I'm also a co-author on a medical research paper published in 2017 on <a href="https://www.degruyter.com/view/j/bmte.ahead-of-print/bmt-2016-0148/bmt-2016-0148.xml">rapid, automated mosaicking of the human corneal subbasal nerve plexus</a> - I worked on the underlying image processing algorithms, graph theory implementations, and technical writing.
@@ -70,53 +61,46 @@
 					</div>
 				</section>
 
-				<!-- Three -->
-					<section id="three" class="wrapper spotlight style3">
+					<section id="fun" class="wrapper spotlight style3">
 						<div class="inner">
 							<a href="#" class="image"><img src="/img/jarvis.jpg"></a>
 							<div class="content">
 								<h2 class="major">I build things for fun.</h2>
-								<p>Some projects have no practical purpose, like an <a href="/building/arduino-coffeemaker">Internet-enabled coffee maker</a> or <a href="/building/jarvis">mobile robotic arm</a>. I once <a href="/building/basement">remodeled a basement</a> over two years while living in it. I also built <a href="/building/lego-cnc">a CNC milling machine</a>, <a href="/building/lego-logic">physical logic gates</a>, and <a href="/building/lego-head">a detailed head sculpture</a> with Legos.</p>
+								<p>Some projects have no practical purpose, like an <a href="/building/arduino-coffeemaker">Internet-enabled coffee maker</a> or <a href="/building/jarvis">mobile robotic arm that can bring me coffee</a> (my ruminations are often around coffee delivery). I once <a href="/building/basement">remodeled a basement</a> over two years while living in it. With only Legos, I built a <a href="/building/lego-cnc">CNC milling machine</a>, <a href="/building/lego-logic">mechanical logic gates</a>, and <a href="/building/lego-head">a detailed head sculpture</a>.</p>
 								<a href="/building" class="special">Check out what I've been building</a>
 							</div>
 						</div>
 					</section>
 
-				<!-- Four -->
-					<section id="four" class="wrapper alt style1">
+					<section id="projects" class="wrapper alt style1">
 						<div class="inner">
-							<h2 class="major">Coding projects</h2>
+							<h2 class="major">I've been busy.</h2>
 							<p>
-								These are the projects I'm writing code for in my free time. Most of my work is open-source on <a href="https://github.com/keshavsaharia">Github</a>, and I'm always welcoming to collaborators.
+								When I build new projects or write down an idea worth sharing, I'll post a link here.
 							</p>
 							<section class="features">
-								<article>
-									<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-									<h3 class="major">Sed feugiat lorem</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-									<a href="#" class="special">Learn more</a>
+								<article class="youtube">
+									<iframe width="100%" height="300" src="https://www.youtube.com/embed/jFztIvYxnwM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+									<div class="article-content">
+										<h3 class="major">Collatz conjecture</h3>
+										<small>December 2016</small>
+										<p>
+											I have been experimenting with producing high-quality videos for introducing computer science problems to beginners.
+											Check out this video on a popular unsolved problem in mathematics!
+										</p>
+										<a target="_blank" href="https://www.youtube.com/watch?v=jFztIvYxnwM" class="special">Watch on youtube</a>
+									</div>
 								</article>
 								<article>
-									<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-									<h3 class="major">Nisl placerat</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-									<a href="#" class="special">Learn more</a>
-								</article>
-								<article>
-									<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-									<h3 class="major">Ante fermentum</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-									<a href="#" class="special">Learn more</a>
-								</article>
-								<article>
-									<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-									<h3 class="major">Fusce consequat</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-									<a href="#" class="special">Learn more</a>
+									<a href="#" class="image"><img src="http://kitafi.com/image/splash.jpg" alt="" /></a>
+									<h3 class="major">kitafi.com</h3>
+									<p>Free interactive lessons for learning Swahili. I made this as a final project during the last of
+									my three years studying Swahili in college.</p>
+									<a href="https://kitafi.com" class="special">Learn Swahili</a>
 								</article>
 							</section>
 							<ul class="actions">
-								<li><a href="#" class="button">Browse All</a></li>
+								<li><a href="/recently" class="button">All my recent posts</a></li>
 							</ul>
 						</div>
 					</section>
@@ -126,38 +110,20 @@
 		<!-- Footer -->
 			<section id="footer">
 				<div class="inner">
-					<h2 class="major">Get in touch</h2>
-					<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-					<form method="post" action="#">
-						<div class="field">
-							<label for="name">Name</label>
-							<input type="text" name="name" id="name" />
-						</div>
-						<div class="field">
-							<label for="email">Email</label>
-							<input type="email" name="email" id="email" />
-						</div>
-						<div class="field">
-							<label for="message">Message</label>
-							<textarea name="message" id="message" rows="4"></textarea>
-						</div>
-						<ul class="actions">
-							<li><input type="submit" value="Send Message" /></li>
-						</ul>
-					</form>
+					<h2 class="major">I'm easy to talk to, especially online.</h2>
 					<ul class="contact">
-						<li class="fa-home">
-							San Francisco, CA<br>
-							United States of America
-						</li>
 						<li class="fa-envelope"><a href="#">keshav@keshav.is</a></li>
 						<li class="fa-linkedin"><a href="#">linkedin.com/keshavsaharia</a></li>
 						<li class="fa-twitter"><a href="#">twitter.com/queshav</a></li>
 						<li class="fa-facebook"><a href="#">facebook.com/keshavsaharia</a></li>
 						<li class="fa-instagram"><a href="#">instagram.com/queshav</a></li>
+						<li class="fa-home">
+							San Francisco, CA<br>
+							United States of America
+						</li>
 					</ul>
 					<ul class="copyright">
-						<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; Keshav Saharia, 2018</li>
 					</ul>
 				</div>
 			</section>
@@ -166,10 +132,10 @@
 		<!-- Scripts -->
 			<script src="/assets/js/skel.min.js"></script>
 			<script src="/assets/js/jquery.min.js"></script>
-			<script src="/assets/js/jquery.scrollex.min.js"></script>
-			<script src="/assets/js/util.js"></script>
+			<!-- <script src="/assets/js/jquery.scrollex.min.js"></script> -->
+			<!-- <script src="/assets/js/util.js"></script> -->
 			<!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="/assets/js/main.js"></script>
+			<!-- <script src="/assets/js/main.js"></script> -->
 			<!-- <script type="text/javascript">
 			$(document).ready(function() {
 				var quotes = [

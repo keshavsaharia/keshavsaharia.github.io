@@ -3865,3 +3865,18 @@
 		}
 
 	}
+	article.youtube {
+		padding: 0px !important;
+	}
+	article.youtube > iframe {
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+	article.youtube > .article-content {
+		padding: 1.75em 1.75em 0.1em 1.75em;
+	}
+article small {
+	font-size: 14px;
+	display: block;
+	opacity: 0.7;
+}
