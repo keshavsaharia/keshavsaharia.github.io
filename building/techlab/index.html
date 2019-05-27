@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/building">building</a>
+
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/building/techlab">techlab</a>
+
+				
+			
+		</header>
+		<main id="terminal"><p>I started Techlab Education in 2013 to teach about computer science and technology to kids in the South Bay Area. I grew the business over 5 years and sold it in 2018. I continue to serve in an advisory role to Techlab and to various education endeavors that it incubated.</p>
+<h1 id="building-the-facility">Building the facility</h1>
+<div class="split"><img src="0.jpg"><img src="0after.jpg"></div>
+
+<div class="split"><img src="1.jpg"><img src="1after.jpg"></div>
+
+<div class="split"><img src="3.jpg"><img src="3after.jpg"></div>
+
+
+
+<h1 id="what-s-next">What&#39;s next</h1>
+<p>Techlab is still running and you can <a href="https://techlab.education">check out the website</a> for the latest information.</p>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
+</html>

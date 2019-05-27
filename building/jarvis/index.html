@@ -1,91 +1,48 @@
 <!DOCTYPE html>
-<html class="no-js">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Jarvis</title>
-    <meta name="description" content="A voice-controlled digital servant for controlling my lights.">
-    <meta name="viewport" content="width=device-width">
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/building">building</a>
 
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/main.css">
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/building/jarvis">jarvis</a>
 
-    <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-</head>
-<body>
-
-    <span class="menu-trigger writer-icon animated fadeInDown">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </span>
-    <div class="hero-image hero-a-great-story" style="background: url(/img/splash/jarvis.jpg) center center no-repeat;background-size:cover;">
-        <noscript>
-            <div class="no-js-menu">
-                <ul>
-                    <li><i class="entypo-home"></i><a href="/">keshav.is</a>/</li>
-                    <li><i class="entypo-user"></i><a href="..">building</a></li>
-                    <li><i class="entypo-chart-area"></i><a href=".">Jarvis</a></li>
-                </ul>
-            </div>
-        </noscript>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div id="menu">
-                <ul>
-                    <li><i class="entypo-home"></i><a href="/">keshav.is</a>/</li>
-                    <li><i class="entypo-user"></i><a href="..">building</a></li>
-                    <li><i class="entypo-chart-area"></i><a href=".">Jarvis</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 main-content single-content">
-                <p class="meta">
-                    <a href="/">Keshav Saharia</a> on March 25th, 2015
-                </p>
-                <div class="markdown">
-                <h1 id="voice-controlled-lighting-and-power-for-around-100">Voice-controlled lighting and power for around $100</h1>
+				
+			
+		</header>
+		<main id="terminal"><h1 id="voice-controlled-lighting-and-power-for-around-100">Voice-controlled lighting and power for around $100</h1>
 <p>Everyone who&#39;s seen Iron Man is familiar with Tony Stark&#39;s AI assistant Jarvis, which listens and responds as a human would to Tony Stark&#39;s verbal commands. While such an assistant may seem inaccessible to all but the billionaire mechanical genius, I&#39;m writing this to show you how to make a Jarvis assistant to control lights and do useful things.</p>
 <div>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/dHWcRmRyteo?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 </div>
 
 <p><strong>I&#39;m still working on rewriting this post with all the improvements I made to Jarvis since version 1.</strong></p>
-
-                </div>
-
-                <div class="single-footer">
-                    <a href="/a">About</a>
-                    <i class="link-spacer"></i>
-                    <a href="/copyrighting">&copy; Keshav Saharia, 2017</a>
-                    <div class="social clearfix">
-                        <a class="social-icon" href="#">
-                            <i class="entypo-twitter"></i>
-                        </a>
-                        <a class="social-icon" href="#">
-                            <i class="entypo-facebook-squared"></i>
-                        </a>
-                    </div>
-
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-<script src="/js/vendor/jquery.jpanelmenu.min.js"></script>
-<script src="/js/vendor/bootstrap.min.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43904822-6', 'auto');
-  ga('send', 'pageview');
-</script>
-
-</body>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
 </html>

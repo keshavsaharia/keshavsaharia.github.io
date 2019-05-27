@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/coding">coding</a>
+
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/coding/kinect">kinect</a>
+
+				
+			
+		</header>
+		<main id="terminal"><h1 id="microsoft-finally-makes-something-i-ll-use">Microsoft finally makes something I’ll use</h1>
+<p>Microsoft released a very nifty toys recently, the Xbox Kinect. It’s basically a depth-sensing camera- each pixel has an RGB value as well as a depth value, which opens enormous possibilities in what you can do with it.</p>
+<p>The most famous example would be the one from Minority Report, where human gestures were the mouse for the screen. The Kinect allows you to sense the location and depth of a human hand, making this type of input possible. As you can see in the image below, the Kinect is able to produce an image of what it sees, as well as an image that records how far away everything in the image is.</p>
+<p>(above: glview, part of the libfreenect open source library)</p>
+<h1 id="interfacing-the-kinect">Interfacing the Kinect</h1>
+<p>The Kinect outputs via USB, so it can be connected to any computer. To use the Kinect, there is a wonderful driver, despite the considerable amount of work that still needs to be done on it, called libfreenect. It is open source and has wrappers to Java, C++, C#, and other languages. My particular interest is in the Java wrapper, but libfreenect really makes it open game for anyone.</p>
+<p>What I plan to do (and ideas for you to do)</p>
+<p>The Kinect opens huge possibilities, and I’m only just beginning to explore them. Right now, I’m working on using the java.awt.robot class to use my kinect to control the mouse on my computer (like in Minority Report). Right now, its in the tweaking phase, as I’m trying to find the best way to process the RGB and depth images simultaneously to find my hand. I’m thinking of buying a glove and coloring the fingers, which would allow me to make use of my Mac’s multitouch feature (the glove would let me find finger coordinates in the RGB image and use the depth coordinates to confirm them). Right now, its a bit shaky, but I’ll definitely have an update on this up in the next few days.</p>
+<p>What I really want to see done with the Kinect is 3D imaging, which I plan to do eventually with all my Lego robotics equipment that sits in a bin in my room. My plan is to build a rotating arm that can swivel around an arbitrary object and generate a 3D map of it. Normally, creating 3D models requires expensive hardware and software, but for $150 the Kinect makes it accessible to pretty much anyone.</p>
+<p>Remember the Wii?</p>
+<p>The excitement of hacking the Kinect gives me nostalgia. I remember a few years back, it was all about hacking the Wii remote. Out came GlovePIE, DarwiinRemote, and various open-source software that allowed anyone to take advantage of the Wii remote’s accelerometer and control buttons. I can’t wait for the Kinect to become the same way. Already, there is an open source driver, and every day more new stuff happens with the Kinect. Hacking a Wii remote was one of the first experiences I had with real-life programming, so I strongly encourage anyone looking for this experience to check out the Kinect.</p>
+<p>For all those willing to give the Kinect a shot, its a sizeable investment, but will definitely pay off in the long run. It’s an amazing device, a great tool for teaching programming (provided the driver and wrapper is installed), and a fun thing to mess around with. If you’re not going to hack it, it can still be used with an Xbox and with all the Kinect games that are coming out. It’s certainly a revolutionary device, and I can’t wait to see what people are going to do with it.</p>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
+</html>

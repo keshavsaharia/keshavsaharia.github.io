@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/writing">writing</a>
+
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/writing/the-universe">the universe</a>
+
+				
+			
+		</header>
+		<main id="terminal"><p>Asking someone what they think about the universe is not so much an opportunity for fruitful debate as it is a way to gage their passion for science and their ability to engage in logical thinking. Anyone who has scientific curiosity has dived into some facet of the vast literature surrounding the unknown, and when questioned they will often regurgitate the most awe-striking ideas they have consumed thus far. Great logical thinkers will have explored these facets deeply and have an overarching &quot;universe-view&quot;, a theory which they can defend with sound arguments. The vast majority of people, when questioned  about the universe, cannot get past the morbid realization of how small they are. So they push all thought of the universe from their mind, as it only serves to discomfort them.</p>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
+</html>

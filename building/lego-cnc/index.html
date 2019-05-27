@@ -1,100 +1,59 @@
 <!DOCTYPE html>
-<html class="no-js">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Lego CNC</title>
-    <meta name="description" content="A CNC milling machine created with Legos.">
-    <meta name="viewport" content="width=device-width">
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/building">building</a>
 
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/main.css">
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/building/lego-cnc">lego cnc</a>
 
-    <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-</head>
-<body>
-
-    <span class="menu-trigger writer-icon animated fadeInDown">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </span>
-    <div class="hero-image hero-a-great-story" style="background: url(/img/splash/lego-cnc.jpg) center center no-repeat;background-size:cover;">
-        <noscript>
-            <div class="no-js-menu">
-                <ul>
-                    <li><i class="entypo-home"></i><a href="/">keshav.is</a>/</li>
-                    <li><i class="entypo-user"></i><a href="..">building</a></li>
-                    <li><i class="entypo-chart-area"></i><a href=".">Lego CNC</a></li>
-                </ul>
-            </div>
-        </noscript>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div id="menu">
-                <ul>
-                    <li><i class="entypo-home"></i><a href="/">keshav.is</a>/</li>
-                    <li><i class="entypo-user"></i><a href="..">building</a></li>
-                    <li><i class="entypo-chart-area"></i><a href=".">Lego CNC</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 main-content single-content">
-                <p class="meta">
-                    <a href="/">Keshav Saharia</a> on September 30th, 2014
-                </p>
-                <div class="markdown">
-                <h1 id="a-lego-3d-printer">A Lego 3D printer</h1>
+				
+			
+		</header>
+		<main id="terminal"><h1 id="a-lego-3d-printer">A Lego 3D printer</h1>
 <p>CNC machines have become a recent obsession of mine, and as a result, I decided to build one out of a Lego Mindstorms NXT kit. After leaving Legos sprawled across my room for over a week and a half, I finally finished creating a machine that can manipulate a cutting tool with some impressive precision.</p>
-<p><img src="/img/building/lego-cnc/PIC1.jpg" alt=""></p>
+<p><img src="1.jpg" alt=""></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TX_T-u66sEE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <h2 id="the-tool">The tool</h2>
 <p>The cutting tool is a small hand dremel that I found on Amazon. It is excellent for cutting accurately through green floral foam.
-<img src="/img/building/lego-cnc/PIC7.jpg" alt=""></p>
-<p>The cutting tool is mounted to a somewhat intricate linear actuator that uses a worm gear for maximum precision. One rotation of the worm gear moves the dremel 3 millimeters up or down, so the Lego motor&#39;s 2.5 degree accuracy gives an z-axis accuracy of the cutting head of approximately 20 micrometers.
-<img src="/img/building/lego-cnc/PIC2.jpg" alt=""></p>
+<img src="7.jpg" alt=""></p>
+<p>The cutting tool is mounted to a somewhat intricate linear actuator that uses a worm gear for maximum precision. One rotation of the worm gear moves the dremel 3 millimeters up or down, so the Lego motor&#39;s 2.5 degree accuracy gives an z-axis accuracy of the cutting head of approximately 20 micrometers.</p>
+<p><img src="2.jpg" alt=""></p>
 <p>To achieve the same level of accuracy on the other axis, I used the Lego bike chain with a 24 tooth gear.
-<img src="/img/building/lego-cnc/PIC3.jpg" alt="">
-<img src="/img/building/lego-cnc/PIC5.jpg" alt=""></p>
+<img src="3.jpg" alt="">
+<img src="5.jpg" alt=""></p>
 <p>The track that the cutting head moves on laterally has a space for the bike chain slide underneath. The yellow wheels ensure that there is no static friction when making minor adjustments to the cutting head&#39;s position.
-<img src="/img/building/lego-cnc/PIC4.jpg" alt=""></p>
+<img src="4.jpg" alt=""></p>
 <p>Underneath the cutting table, there is another motor that drives a rack and pinion setup for the last axis of cutting head motion.
-<img src="/img/building/lego-cnc/PIC6.jpg" alt=""></p>
-<p>I used leJOS to write a Java program for controlling the cutting head, and I used Mathematica to communicate the coordinates for cutting out a 3D file. I&#39;ll update this post with screenshots of the software and rendering process when I get time.</p>
-
-                </div>
-
-                <div class="single-footer">
-                    <a href="/a">About</a>
-                    <i class="link-spacer"></i>
-                    <a href="/copyrighting">&copy; Keshav Saharia, 2017</a>
-                    <div class="social clearfix">
-                        <a class="social-icon" href="#">
-                            <i class="entypo-twitter"></i>
-                        </a>
-                        <a class="social-icon" href="#">
-                            <i class="entypo-facebook-squared"></i>
-                        </a>
-                    </div>
-
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-<script src="/js/vendor/jquery.jpanelmenu.min.js"></script>
-<script src="/js/vendor/bootstrap.min.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43904822-6', 'auto');
-  ga('send', 'pageview');
-</script>
-
-</body>
+<img src="6.jpg" alt=""></p>
+<p>I used leJOS to write a Java program for controlling the cutting head, and I used Mathematica to communicate the coordinates for cutting out a 3D file.</p>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
 </html>

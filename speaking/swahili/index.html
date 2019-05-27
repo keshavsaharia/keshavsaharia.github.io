@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/speaking">speaking</a>
+
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/speaking/swahili">swahili</a>
+
+				
+			
+		</header>
+		<main id="terminal"><p>I took 3 years of Swahili courses in college at the <a href="">University of Illinois at Urbana Champaign</a>.</p>
+<p>My final project in my final Swahili class was to launch a simple website and tutorial format for <a href="http://kitafi.com">teaching Swahili online</a>.</p>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
+</html>

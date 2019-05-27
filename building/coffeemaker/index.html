@@ -1,53 +1,31 @@
 <!DOCTYPE html>
-<html class="no-js">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>IoT coffeemaker</title>
-    <meta name="description" content="An Arduino-controlled coffeemaker that is connected to the Internet.">
-    <meta name="viewport" content="width=device-width">
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/building">building</a>
 
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/main.css">
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/building/coffeemaker">coffeemaker</a>
 
-    <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-</head>
-<body>
-
-    <span class="menu-trigger writer-icon animated fadeInDown">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </span>
-    <div class="hero-image hero-a-great-story" style="background: url(/img/splash/coffeemaker.jpg) center center no-repeat;background-size:cover;">
-        <noscript>
-            <div class="no-js-menu">
-                <ul>
-                    <li><i class="entypo-home"></i><a href="/">keshav.is</a>/</li>
-                    <li><i class="entypo-user"></i><a href="..">building</a></li>
-                    <li><i class="entypo-chart-area"></i><a href=".">IoT coffeemaker</a></li>
-                </ul>
-            </div>
-        </noscript>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div id="menu">
-                <ul>
-                    <li><i class="entypo-home"></i><a href="/">keshav.is</a>/</li>
-                    <li><i class="entypo-user"></i><a href="..">building</a></li>
-                    <li><i class="entypo-chart-area"></i><a href=".">IoT coffeemaker</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 main-content single-content">
-                <p class="meta">
-                    <a href="/">Keshav Saharia</a> on March 25th, 2015
-                </p>
-                <div class="markdown">
-                <h1 id="add-your-coffee-maker-to-the-internet-of-things">Add Your Coffee Maker to the Internet of Things</h1>
+				
+			
+		</header>
+		<main id="terminal"><h1 id="add-your-coffee-maker-to-the-internet-of-things">Add Your Coffee Maker to the Internet of Things</h1>
 <p>My interest in the <a href="https://en.wikipedia.org/wiki/Internet_of_Things">Internet of Things</a> began when I found my way to the Wikipedia article on <a href="https://en.wikipedia.org/wiki/Hyper_Text_Coffee_Pot_Control_Protocol">HTCPCP</a> (Hyper Text Coffee Pot Control Protocol). HTCPCP is a proposed standard for communicating with coffee pots over the Internet. During some free time this weekend, I built a prototype coffee maker that uses HTCPCP to allow my computer to control the coffee brewing process.</p>
-<p><img src="/img/building/coffeemaker/1.jpg" alt=""></p>
+<p><img src="1.jpg" alt=""></p>
 <p>A couple years after building the first coffee maker, I adapted this project into the Arduino curriculum at <a href="https://techlab.education">techlab</a>, and used the Arduino Ethernet shield to make it a completely web-based and RESTful solution - check out our <a href="https://github.com/techlabeducation/arduino">github</a>.</p>
 <h2 id="the-materials">The Materials</h2>
 <ul>
@@ -57,50 +35,26 @@
 <li><strong>4 channel relay module</strong> ($12)</li>
 </ul>
 <h2 id="process">Process</h2>
-<p>First, break open your coffee maker (at your own risk) and remove the chip behind the buttons.</p>
-<p><img src="/img/building/coffeemaker/2.jpg" alt=""></p>
-<p>Then, solder wires to opposite diagonals of the button components on the chip. You can use a ruler to reference between the two sides of the board, as it is important to be soldering onto the correct point. The other end of the two wires gets connected to a relay module, which can switch an isolated electrical current and be powered by a small device like the Arduino.  </p>
-<p><img src="/img/building/coffeemaker/3.jpg" alt=""></p>
-<p>I used a piece of scrap wood to mount the relay module onto the coffeemaker.</p>
-<p><img src="/img/building/coffeemaker/4.jpg" alt=""></p>
-<p>I then attached the Arduino and wired everything together.  </p>
-<p><img src="/img/building/coffeemaker/5.jpg" alt=""></p>
+<p>First, break open your coffee maker (at your own risk) and remove the chip behind the buttons. Then, solder wires to opposite diagonals of the button components on the chip. You can use a ruler to reference between the two sides of the board, as it is important to be soldering onto the correct point. The other end of the two wires gets connected to a relay module, which can switch an isolated electrical current and be powered by a small device like the Arduino.  </p>
+<div class="split"><img src="2.jpg"><img src="3.jpg"></div>
+
+<p>I used a piece of scrap wood to mount the relay module onto the coffeemaker, then attached the Arduino and wired everything together.  </p>
+<div class="split"><img src="4.jpg"><img src="5.jpg"></div>
+
 <p>The next step would be to take an Arduino Ethernet shield and attach it to the Arduino, which would allow you to communicate with it via Ethernet. Right now all of the code is on the <a href="https://github.com/techlabeducation/arduino">github page</a>, and I&#39;ll transfer the interesting parts over to here sometime soon.</p>
-<p><strong>Update</strong>: At <a href="https://techlab.education">techlab</a>, we built <a href="http://arduinoroom.com">arduinoroom.com</a>, to streamline the process of connecting and controlling the Ethernet shield.</p>
-
-                </div>
-
-                <div class="single-footer">
-                    <a href="/a">About</a>
-                    <i class="link-spacer"></i>
-                    <a href="/copyrighting">&copy; Keshav Saharia, 2017</a>
-                    <div class="social clearfix">
-                        <a class="social-icon" href="#">
-                            <i class="entypo-twitter"></i>
-                        </a>
-                        <a class="social-icon" href="#">
-                            <i class="entypo-facebook-squared"></i>
-                        </a>
-                    </div>
-
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-<script src="/js/vendor/jquery.jpanelmenu.min.js"></script>
-<script src="/js/vendor/bootstrap.min.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43904822-6', 'auto');
-  ga('send', 'pageview');
-</script>
-
-</body>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
 </html>

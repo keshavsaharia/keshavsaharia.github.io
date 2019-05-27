@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/noting">noting</a>
+
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/noting/github-pages-setup">github pages setup</a>
+
+				
+			
+		</header>
+		<main id="terminal"><h1 id="how-to-set-up-github-pages">How to set up GitHub pages</h1>
+<p>First, we will <a href="#create-a-repository">create a repository</a> named &quot;<strong>yourgithubusername</strong>.github.io&quot;. Then, you have the option of using a <a href="#custom-domain">custom domain</a> so the URL of your github pages is <a href="http://example.com">example.com</a> instead of <a href="http://example.github.io">example.github.io</a>.</p>
+<h2 id="create-a-repository">Create a repository</h2>
+<p>You must be logged in to a GitHub account.</p>
+<ul>
+<li>In the top right corner of any GitHub page, click the plus icon, then click &quot;create new repository&quot;. A repository is a publicly-visible folder hosted by GitHub where you can share files.</li>
+</ul>
+<p><img src="https://keshavsaharia.github.io/image/new-repository.png" alt=""></p>
+<p>Create a repository named exactly &quot;<strong>yourgithubusername</strong>.github.io&quot;, where <strong>yourgithubusername</strong> is substituted for your own username. Check the box for &quot;Initialize this repository with a README&quot;.</p>
+<p><img src="https://keshavsaharia.github.io/image/create-github-pages-repository.png" alt=""></p>
+<p>Finally, click the green &quot;Create repository&quot; button, which will bring you to a page showing the files in your repository.</p>
+<p><img src="https://keshavsaharia.github.io/image/github-pages-repository.png" alt=""></p>
+<p>Click the buttons to create individual files or upload your own HTML files. You should be able to navigate to <a href="https://keshavsaharia.github.io/"><strong>yourusername</strong>.github.io</a> and see your HTML page.</p>
+<h2 id="custom-domain">Custom domain</h2>
+<p>You will need to register a domain with a domain registrar like <a href="https://www.godaddy.com/">GoDaddy</a>, <a href="https://domains.google/">Google Domains</a>, or <a href="https://gandi.net">Gandi.net</a>. You can use <a href="https://instantdomainsearch.com">Instant Domain Search</a> to quickly verify if the domain name you want is available.</p>
+<p><strong>I will update this section with screenshots.</strong></p>
+<p>Once you have registered a domain, you will need to add two <code>A</code> records that point to the following IP addresses:</p>
+<ul>
+<li>192.30.252.153</li>
+<li>192.30.252.154</li>
+</ul>
+<p>Finally, add a CNAME record for the key &quot;www&quot; with a value of <strong>yourgithubusername.github.io</strong>.</p>
+<p>It can anywhere from a couple minutes to a couple hours for your domain registrar to update its DNS servers with the changes.</p>
+<p>The last step is to create a new file in your GitHub repository with a name of &quot;CNAME&quot;. In this file, put the URL that you want to connect to your GitHub pages, without any trailing &quot;http://&quot;. For example, in the <a href="https://github.com/keshavsaharia/keshavsaharia.github.io/blob/master/CNAME">CNAME file</a> for the <a href="https://github.com/keshavsaharia/keshavsaharia.github.io">keshavsaharia.github.io</a> repository, there is only one line with the content &quot;how.keshav.is&quot;.</p>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
+</html>

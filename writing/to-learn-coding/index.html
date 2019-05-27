@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/writing">writing</a>
+
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/writing/to-learn-coding">to learn coding</a>
+
+				
+			
+		</header>
+		<main id="terminal"><h1 id="why-learn-to-code">Why learn to code</h1>
+<p>Learning to write computer programs teaches structural thinking and builds useful problem-solving skills. However, there is a growing movement that <em>everyone</em> should learn coding, which I don&#39;t necessarily agree with.</p>
+<h2 id="what-is-coding-">What is coding?</h2>
+<p>Coding is a popular vernacular used to refer to programming, which is a primary <em>application</em> of computer science. Computer science is the study of <strong>algorithms</strong>, or step-by-step processes, while programming is generally regarded as the production of algorithms in a machine-readable format. For example, the program on the right is an algorithm to print all the factors of a given number <code>n</code>.</p>
+<pre><code>n = 7438
+for factor in 2 ... n - 1 {
+    if n % factor == 0 {
+        print(factor)
+    }
+}</code></pre><p>Algorithms are often referred to as &quot;code&quot; because to an outsider, they appear indecipherable. To one who understands computer science, &quot;code&quot; becomes something much more than text and punctuation. Code is the means by which problems are solved.</p>
+<h2 id="programming-as-theory-building">Programming as theory building</h2>
+<p>My personal belief is that computer science is a theory, in the sense of <a href="https://en.wikipedia.org/wiki/The_Concept_of_Mind">Gilbert Ryle&#39;s &quot;Concept of Mind&quot;</a>. Ryle&#39;s notion of theory is that a person who possesses a theory knows how to perform certain applications of the theory, as well as support the applications with explanations and justifications. Programming is a highly intellectual activity, so it is important to elaborate on the exact nature by which it requires the use of intellect.</p>
+<p>Ryle&#39;s notion of intelligent behavior is the ability to do certain things, like catching a fish or understanding a joke. The level of intelligence is determined by a subjective analysis of how effective one&#39;s performance in accomplishing that thing. It is also determined by how well one can identify errors in its performance and learn from the examples of others.</p>
+<p>Ryle goes on to characterize <em>intellectual activity</em> as that where the individual builds a theory, where a theory is the underlying knowledge not only to do something, but to explain it, answer questions about it, and form cohesive arguments about its effectiveness.</p>
+<h2 id="every-kid-should-learn-to-code">Every kid should learn to code</h2>
+<p>My reasoning is the same as the reasoning behind &quot;every kid should be literate&quot;. Kids who can read and think critically about what they read are more likely to be productive citizens and positively contribute to society. Kids who are &quot;coding literate&quot; can understand how technology is used to solve modern-day problems, and gives them the opportunity to be <em>producers</em> rather than merely <em>consumers</em> of it.</p>
+<p>Not every coding literate kid will become a professional programmer, just like every literate kid doesn&#39;t grow up to become a professional writer. Being coding literate from an early age simply opens that door for them, since it wires their brain from a young age to think critically and break problems into step-by-step algorithms.</p>
+<h2 id="every-adult-has-the-ability-to-learn-coding">Every adult has the ability to learn coding</h2>
+<p>This is the same as saying &quot;every adult has the ability to learn brain surgery&quot;. Any person willing to put 7 years of time into learning the intricacies of the human brain and the medical knowledge required to operate on it will become a brain surgeon. But most adults are not willing to put in the substantially lower time requirement to learn programming thoroughly. Most adults scratch the surface of computer science without exploring its depths, and call themselves programmers. It is akin to someone who reads Wikipedia articles on brain surgery calling themselves a neurosurgeon.</p>
+<p>The honest reality is that learning programming as an adult is <strong>really hard</strong>. I&#39;m sure there are some Will-Hunting-esque savants out there who pick up cod</p>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/building">building</a>
+
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/building/touchscreen-table">touchscreen table</a>
+
+				
+			
+		</header>
+		<main id="terminal"><h1 id="touchscreen-table">Touchscreen table</h1>
+<p>I started building this touchscreen table but was not able to get the capacitative touch working. I&#39;ve posted a series of pictures of how I got the table itself working with a projector. I also linked to several projects online where this same concept is built to completion.</p>
+<p>I bought a 2&#39; x 4&#39; sheet of acrylic and a light diffuser sheet online, and built a wooden frame to hold them.</p>
+<div class="split3"><img src="1a.jpg"><img src="1c.jpg"><img src="2a.jpg"></div>
+
+<p>I then built a wooden mount for a short-throw projector.</p>
+<p><img src="3.jpg" alt=""></p>
+<p>I angled the projector down at a mirror, which reflected the image back up onto the table. This was necessary since pointing the projector straight up from the bottom of the table limited the size of the displayed image. With this setup, I could spread the image across 2 feet within a coffee-table sized table.</p>
+<p><img src="4.jpg" alt=""></p>
+<p>I then built out the table and firmly attached the mounts for the projector.</p>
+<div class="split"><img src="5a.jpg"><img src="5b.jpg"></div>
+
+<p>The two mirrors, even when optimally arranged, had a slight seam between them that was impossible to get rid of. I replaced them with a single larger mirror.</p>
+<p><img src="7.jpg" alt=""></p>
+<h1 id="infrared-touch-detection">Infrared touch detection</h1>
+<p>The sheet of acrylic on top of the light diffuser needs to have infrared LEDs shining into it at a 90 degree angle. I learned later that the specific type and illumination range of the LED, the exact angle it enters the sheet, and the edges of the acrylic sheet, all have very exact requirements.</p>
+<p>In my initial tests of touch detection using a PS2 eye camera with the IR filter removed, the distinction between the untouched and touched surface was too small, and the accuracy too unreliable, to proceed with the project.</p>
+<p>[ image of PS2 eye ]</p>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
+</html>

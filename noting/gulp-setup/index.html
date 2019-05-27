@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/noting">noting</a>
+
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/noting/gulp-setup">gulp setup</a>
+
+				
+			
+		</header>
+		<main id="terminal"><p>Gulp makes it easy to define pipeline for files.</p>
+<p>This is how I use the <code>gulp</code> module with Node.js.</p>
+<h1 id="setup-paths">Setup paths</h1>
+<p>For the examples below, I&#39;m using a header which describes all source paths and build destinations.</p>
+<pre><code class="language-javascript">/**
+ * Step 1:  Set the path where files should be built
+ *             (i.e. concatenated and copied).
+ */
+var developer = &#39;./dev&#39;;
+var production = &#39;./dist&#39;;
+
+/**
+ * Step 2:  Source files used to build the site.
+ */
+var source = {
+    template: [&#39;./src/template/**/*.html&#39;],
+    html: [&#39;./src/html/**/*.html&#39;],
+
+    // A list of CSS sources in order
+    css: [&#39;./src/css/**/*.css&#39;],
+
+    // A list of JS sources in order
+    js: [&#39;./src/lib/**/*.js&#39;, &#39;./src/js/**/*.js&#39;]
+};</code></pre>
+<h2 id="modules">Modules</h2>
+<p>Here is a <a href="how.keshav.is/coding/using-gulp/package.json">package.json</a> file with all the necessary information. Drop it in your folder, then <code>npm install</code>.</p>
+<p>Here are the base recommended modules.</p>
+<pre><code class="language-javascript">var gulp = require(&#39;gulp&#39;),
+
+    // Essential gulp plugins
+    concat = require(&#39;gulp-concat&#39;),
+    rename = require(&#39;gulp-rename&#39;),
+    merge = require(&#39;merge-stream&#39;),
+
+    uglifyJS = require(&#39;gulp-uglify&#39;),
+    uglifyCSS = require(&#39;gulp-uglify-css&#39;);</code></pre>
+<h1 id="html-simple-">HTML (simple)</h1>
+<p>This simply copies all HTML files to the build folders.</p>
+<pre><code class="language-javascript">gulp.task(&#39;html&#39;, function() {
+    return gulp.src(source.html)
+        .pipe(gulp.dest(developer))
+        .pipe(gulp.dest(production))
+});</code></pre>
+<h1 id="css">CSS</h1>
+<p>The CSS task first concatenates and uglifies the CSS files into a single <code>style.css</code> file.</p>
+<pre><code class="language-javascript">gulp.task(&#39;css&#39;, function() {
+    return gulp.src(source.css)
+        .pipe(concat(&#39;style.css&#39;))
+        .pipe(gulp.dest(developer))
+        .pipe(uglifycss())
+        .pipe(gulp.dest(production));
+});</code></pre>
+<h1 id="nunjucks">Nunjucks</h1>
+<p>Nunjucks is an open-source templating engine built by Mozilla. The <a href="https://mozilla.github.io/nunjucks/">documentation</a> describes the templating system in depth. Gulp has a plugin for adding nunjucks to your pipeline.</p>
+<pre><code class="language-javascript">source.template = [&#39;./src/template/&#39;];
+source.data = [&#39;./src/data/config.json&#39;];
+
+// Configure nunjucks
+var render = require(&#39;gulp-nunjucks-render&#39;);
+render.nunjucks.configure(source.template, { watch: true });
+
+/**
+ * HTML task for generating static pages.
+ */
+gulp.task(&#39;html&#39;, function() {
+    var task = gulp.src(source.html);
+
+    if (Array.isArray(source.data))
+        source.data.forEach(function(dataSource) {
+            task = task.pipe(insert(require(dataSource)));
+        });
+
+    return task
+        .pipe(render())
+        .pipe(gulp.dest(developer))
+        .pipe(gulp.dest(production))
+});
+</code></pre>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
+</html>

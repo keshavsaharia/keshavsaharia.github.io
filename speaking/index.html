@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Speaking</title>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+	</head>
+	<body>
+		<main id="terminal">
+<aside>
+	<img src="/assets/image/avatar.png">
+	<h3><strong>Keshav Saharia</strong></h3>
+	<p>San Francisco, California</p>
+	<p>
+		<a href="https://github.com/keshavsaharia">github</a> |
+		<a href="https://linkedin.com/keshav-saharia">linkedin</a> |
+		<a href="https://angel.co/keshav-saharia">angellist</a>
+	</p>
+</aside>
+<main class="previews">
+	<h5>
+		<a href="/">keshav.is</a>
+		<span>/</span>
+		
+		
+			
+			<a href="/speaking">speaking</a>
+
+			
+		
+	</h5>
+
+	
+
+	
+		<div class="preview">
+			
+				
+			
+				
+				<a href="/speaking/swahili">
+					<div></div>
+					<img src="/speaking/swahili/preview.jpg">
+					<p>Swahili</p>
+				</a>
+				
+			
+				
+				<a href="/speaking/wolfram-technology-conference">
+					<div></div>
+					<img src="/speaking/wolfram-technology-conference/preview.jpg">
+					<p>WTC 2012</p>
+				</a>
+				
+			
+		</div>
+
+	
+</main>
+<main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs" type="application/json">{"picademy":{"title":"Picademy","hide":true,"incomplete":true},"swahili":{"title":"Swahili","fluency":"IRL 4"},"wolfram-technology-conference":{"title":"WTC 2012","date":"12-10-2012"}}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
+</html>

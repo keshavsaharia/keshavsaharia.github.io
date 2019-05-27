@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/computing">computing</a>
+
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/computing/spork">spork</a>
+
+				
+			
+		</header>
+		<main id="terminal"><p>It’s finally here! About a week ago, I ordered two Zotac MAGs, a $269 mini computer, with the hopes of making my own miniature computing cluster. The two dual-core MAGs, which run Ubuntu 10.10 like champs, allow me to harness 4 extra cores through gridMathematica. One of my favorite features of Mathematica is the LightweightGrid, a tool that allows a Mathematica user to launch Mathematica kernels on computers running gridMathematica on the local network. The selling point of LightweightGrid is that it can turn quiet computer labs into multi-node computing clusters almost instantly.</p>
+<p>However, as a Java enthusiast, I am more interested in Hadoop, an open-source cluster computing framework based on the Hadoop Distributed File System (HDFS). Hadoop uses a framework called Map Reduce, where a master node “maps” out a function to slave nodes (i.e. function mapped over {a,b,c} sends function[a], function[b], and function[c] to different slave nodes). Then, a defined “reduce” operation takes the inputs returned from the slave nodes and reduces it to the desired output.</p>
+<p>As of right now, my Hadoop cluster, named “spork” after the ingenious utensil, is under construction. If my brain isn’t melted from studying for midterm week, I’ll have some more to write about in a couple days.</p>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
+</html>

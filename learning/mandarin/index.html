@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/learning">learning</a>
+
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/learning/mandarin">mandarin</a>
+
+				
+			
+		</header>
+		<main id="terminal"><p>I am in the early stages of learning to speak Mandarin, and I hope to some day speak the language fluently. Traveling and living in China was the most memorable experiences of my life, and I hope to see as much of this beautiful country as I possibly can. The Mandarin language has a much simpler grammar than English with its many exceptions and grammatical rules.</p>
+<p>In America it is common for the media to portray China as an adversary. However, Americans and Chinese both live in societies with increasing income inequality, wage stagnation, and media bias (although in this regard the American free press is obviously superior to the censored Chinese one). The Chinese people themselves are as likely to be morally upstanding individuals as Americans, and often more so.</p>
+<p>In rural Yangshuo, an old farmer put down her farming tools to guide us to the start of a climbing route.</p>
+<p>[ picture ]</p>
+<p>In Qufu (birthplace of Confucius), a man on the bus who noticed we were lost stepped off the bus with us, paid for our taxi to our location, and walked back to the bus stop to get the next bus.</p>
+<p>[ picture ]</p>
+<p>In Shanghai, a taxi driver stole my phone and months of pictures/videos that hadn&#39;t been backed up (most American cloud services are blocked or severely slow within China).</p>
+<p>[ picture ]</p>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
+</html>

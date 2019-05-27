@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/computing">computing</a>
+
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/computing/san-francisco-parking-tickets">san francisco parking tickets</a>
+
+				
+			
+		</header>
+		<main id="terminal"><h1 id="parking-in-san-francisco">Parking in San Francisco</h1>
+<p>The city of San Francisco has an impressive collection of <a href="">open data</a> which I used along with a [FOIA request](<a href="https://en.wikipedia.org/wiki/Freedom_of_Information_Act_(United_States)">https://en.wikipedia.org/wiki/Freedom_of_Information_Act_(United_States)</a> to the <a href="">SFMTA</a> for all parking tickets issued over the last decade. My research goals with this project are to</p>
+<ul>
+<li>visualize parking enforcement statistics and how they are changing</li>
+<li>quantify the social good of parking tickets from the corrective effect it has on those who behave out of order</li>
+<li>search for correlations between enforcement and profitability to the respective agency collecting fines from enforcement</li>
+<li>compare whether tickets as a revenue mechanism do more harm to individuals than the social benefits they provide</li>
+</ul>
+<p>All of the results from my research are published in an easy-to-consume format on <a href="https://sfparkingproject.org">sfparkingproject.org</a>.</p>
+<h2 id="opening-the-files">Opening the files</h2>
+<p>The CD contained 12 Excel files (<code>.xlsx</code>), each around 150 MB in size with 6 months of parking citations. I was unable to use conventional software (Excel, Numbers) to open the files, so I wrote a Java utility with the <a href="https://poi.apache.org/">Apache POI</a> API to pipe the spreadsheet data into CSV files.</p>
+<p>[ screenshot of Java utility running ]</p>
+<p>I ended up with 8.1 million parking tickets that have been submitted to SF Open Data.</p>
+<h1 id="statistics">Statistics</h1>
+<p>My initial exploration was into statistics. Here is a graph of ticketing frequency over 6 years.</p>
+<ul>
+<li>How much has the SFMTA been paid? How much is it owed?</li>
+</ul>
+<p><strong>Visualize:</strong></p>
+<ul>
+<li><p>group all tickets by date, export counts of enforcement by day</p>
+</li>
+<li><p>group all tickets by time, export counts of enforcement by time</p>
+</li>
+<li><p>group all tickets by time, export profitability of enforcement over time</p>
+</li>
+<li><p>group tickets by day of the month, day of the week (box and whisker chart)</p>
+</li>
+<li><p>visualization: export a GIF which shows how the distribution has changed/not changed</p>
+</li>
+</ul>
+<h2 id="offenses">Offenses</h2>
+<p>Which offenses generate the most money?</p>
+<ul>
+<li>group tickets by offenses, pie chart of offenses as percentage of revenue</li>
+<li>group tickets by offenses, pie chart of offenses as percentage of tickets</li>
+<li>average ticket price for each offense</li>
+<li>average payment rate for each offense</li>
+<li>vehicle make/model vs payment rate</li>
+<li>payment rate compared to offense # (likelihood of paying violation vs violation #)</li>
+</ul>
+<h2 id="specific-offenses">Specific offenses</h2>
+<ul>
+<li>How much does street sweeping generate the money vs how much does it cost</li>
+<li>How many registration expired tickets do people get on average before updating their registration?</li>
+<li>How many correctable offenses have not been remitted</li>
+</ul>
+<h3 id="payment-by-offense-number">Payment by offense number</h3>
+<p>First time offenders more likely to pay than repeat offenders</p>
+<h1 id="geocoding">Geocoding</h1>
+<p>The tickets did not have a latitude or longitude so I had to geocode them using open data from SF open data. Here is a heatmap of the most frequent parking violation locations in San Francisco.</p>
+<p>[ image of disks and heatmap ]</p>
+<p>The greener an area is, the more revenue it generates. Redder areas produce less than average revenue.</p>
+<ul>
+<li><p>issue date</p>
+<ul>
+<li>what day of the month has the most tickets?</li>
+<li>what day of the week has the most tickets?</li>
+<li>why does january 2nd have so many tickets?</li>
+<li>what months have the most tickets?</li>
+<li>how has ticketing increased over the years?</li>
+</ul>
+</li>
+<li><p>heatmap by month - show how distribution of tickets has changed</p>
+</li>
+<li><p>heatmap by day - smooth animation of ticketing frequency changing over time (ripples in a pond, each ticket is like a stone hitting the pond with a certain force)</p>
+</li>
+</ul>
+<h1 id="offenders">Offenders</h1>
+<p>Let&#39;s look at the profile of repeat offenders. As expected, the number of tickets received by a vehicle exponentially decays.</p>
+<p>If we plot this decay for 1 - 10 tickets, then for 11 - 50 tickets, it is a perfect decay.</p>
+<p>Once we go beyond 50, we get a random distribution of numbers of tickets issued to each plate.</p>
+<blockquote>
+<p>Rental cars - you would expect a rental car to get tickets randomly distributed around the city</p>
+</blockquote>
+<h2 id="vehicles">Vehicles</h2>
+<p>Compare vehicle market share to vehicle offense rate</p>
+<h2 id="payment">Payment</h2>
+<p>Let&#39;s look at payment rate as a function of number of tickets.</p>
+<h3 id="most-repeated">Most repeated</h3>
+<ul>
+<li>repeat offenders<ul>
+<li>what license plates receive the most parking tickets?</li>
+<li>who has paid the most</li>
+<li>do repeat offenders pay more or less per ticket?</li>
+</ul>
+</li>
+<li>vehicle makes<ul>
+<li>are particular vehicle makes more likely to get tickets? Compare % of total vehicle market share to % tickets</li>
+</ul>
+</li>
+<li>location<ul>
+<li>what streets get the most tickets</li>
+<li>most dangerous place to park in the city</li>
+<li>where on the street are the most tickets issued</li>
+<li>year-by-year heatmap of how ticket issuance is changing</li>
+</ul>
+</li>
+<li>violations<ul>
+<li>which violations are the most common</li>
+<li>violation-specific heatmaps</li>
+</ul>
+</li>
+<li>amount paid<ul>
+<li>how much money does SFMTA make from citations?</li>
+<li>average vehicle price vs average tickets paid</li>
+</ul>
+</li>
+</ul>
+<h2 id="towing">Towing</h2>
+<p>What happens to the vehicles that get towed?</p>
+<p>Autoreturn.com handles all towing for the city of San Francisco.</p>
+<ul>
+<li><a href="http://www.stcloudcapital.com/portfolio/detail/tegsco-llc-dba-san-francisco-autoreturn/">http://www.stcloudcapital.com/portfolio/detail/tegsco-llc-dba-san-francisco-autoreturn/</a></li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>I took care to present an impartial analysis that focuses on the data, but I will throw one personal anecdote in here. During the course of this project, I myself received a street sweeping ticket. I quickly rationalized a careful person like myself was only ticketed because I hadn&#39;t slept much the night before and wasn&#39;t paying as close attention to the clearly visible signage on when parking is prohibited. Someone working two jobs or rushing around to support their family would be more prone to finding themselves in a situation where they simply <em>made a mistake</em>. A notable difference between myself and the subjects of my analysis is that I could simply pay it off and let it go.</p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>I was inspired by <a href="https://www.sfchronicle.com/opinion/openforum/article/San-Francisco-has-become-a-predatory-government-10641316.php">this opinion post</a> in the SF Chronicle and <a href="https://features.propublica.org/driven-into-debt/chicago-ticket-debt-bankruptcy/">this article in ProPublica</a>.</p>
+<h2 id="further-reading">Further reading</h2>
+<p><a href="http://cassites.uoregon.edu/econ/wp-content/uploads/sites/4/2014/07/Goodling-Olson_fine-payment_2010.pdf">http://cassites.uoregon.edu/econ/wp-content/uploads/sites/4/2014/07/Goodling-Olson_fine-payment_2010.pdf</a></p>
+<p><a href="https://sfbos.org/sites/default/files/FileCenter/Documents/55154-Budget%20and%20Legislative%20Analyst%20Policy%20Report.%20Municipal%20Fines.%20February%209%2C%202016.pdf">https://sfbos.org/sites/default/files/FileCenter/Documents/55154-Budget%20and%20Legislative%20Analyst%20Policy%20Report.%20Municipal%20Fines.%20February%209%2C%202016.pdf</a></p>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
+</html>

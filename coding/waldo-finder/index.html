@@ -1,84 +1,83 @@
 <!DOCTYPE html>
-<html class="no-js">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>There&#39;s Waldo</title>
-    <meta name="description" content="Using Mathematica&#39;s image processing capabilities to find Waldo in a Where&#39;s Waldo image.">
-    <meta name="viewport" content="width=device-width">
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/coding">coding</a>
 
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/main.css">
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/coding/waldo-finder">waldo finder</a>
 
-    <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-</head>
-<body>
-
-    <span class="menu-trigger writer-icon animated fadeInDown">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </span>
-    <div class="hero-image hero-a-great-story">
-        <noscript>
-            <div class="no-js-menu">
-                <ul>
-                    <li><i class="entypo-home"></i><a href="/">keshav.is</a>/</li>
-                    <li><i class="entypo-user"></i><a href="..">coding</a></li>
-                    <li><i class="entypo-chart-area"></i><a href=".">There&#39;s Waldo</a></li>
-                </ul>
-            </div>
-        </noscript>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div id="menu">
-                <ul>
-                    <li><i class="entypo-home"></i><a href="/">keshav.is</a>/</li>
-                    <li><i class="entypo-user"></i><a href="..">coding</a></li>
-                    <li><i class="entypo-chart-area"></i><a href=".">There&#39;s Waldo</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 main-content single-content">
-                <p class="meta">
-                    <a href="/">Keshav Saharia</a> on 
-                </p>
-                <div class="markdown">
-                
-                </div>
-
-                <div class="single-footer">
-                    <a href="/a">About</a>
-                    <i class="link-spacer"></i>
-                    <a href="/copyrighting">&copy; Keshav Saharia, 2017</a>
-                    <div class="social clearfix">
-                        <a class="social-icon" href="#">
-                            <i class="entypo-twitter"></i>
-                        </a>
-                        <a class="social-icon" href="#">
-                            <i class="entypo-facebook-squared"></i>
-                        </a>
-                    </div>
-
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-<script src="/js/vendor/jquery.jpanelmenu.min.js"></script>
-<script src="/js/vendor/bootstrap.min.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43904822-6', 'auto');
-  ga('send', 'pageview');
-</script>
-
-</body>
+				
+			
+		</header>
+		<main id="terminal"><p>Almost everyone can reminisce back to a time where they had their eyes affixed to a &quot;Where&#39;s Waldo&quot; puzzle, where one has to find the brightly clad and elusive &quot;Waldo&quot; in his signature striped red shirt.</p>
+<p><img src="waldo-sm.jpg" alt=""></p>
+<p>This was my experiment in searching for the defining characteristics of Waldo with an image processing routine that a computer could perform- essentially, an automated way to find striped red things. The idea was to create a function that could input a Waldo image and output an image with regions of the image highlighted, so a human could quickly scan the image to find Waldo. I used Mathematica&#39;s powerful image processing functions and came up with several solutions.</p>
+<h2 id="highlighting-red-areas">Highlighting red areas</h2>
+<p>A straightforward way to aid a human in finding Waldo would be to simply highlight all red regions of the image.</p>
+<p><img src="red-highlighted.jpg" alt=""></p>
+<p>But this is still tedious, since there are many red regions in the image, although the darkening effect does make it easier to pick out the striped pattern of Waldo&#39;s shirt.</p>
+<h2 id="partitioning-with-heuristics">Partitioning with heuristics</h2>
+<p>Using the <code>ImagePartition</code> function, an image can be divided into smaller sub-regions.
+<img src="2.jpg" alt=""></p>
+<p>Each of these sub-regions can be put through a heuristic function which calculates the similarity between the subregion and Waldo&#39;s striped shirt. Regions that are more red and more striped should get a higher value, while regions that obviously don&#39;t contain Waldo should be blurred out. For example, using <code>MorphologicalComponents</code>, one can count the number of <em>morphs</em> in a particular image.</p>
+<p><img src="3.jpg" alt=""></p>
+<p>By accounting for morphological components, a more accurate likelihood can be assigned to each partition.</p>
+<p><img src="4.jpg" alt=""></p>
+<p>I combined these into a simple heuristic function that takes the proportion of red content and horizontal morphological components into account.</p>
+<p><img src="heuristic-function.png" alt=""></p>
+<p><img src="waldo-threshold.jpg" alt=""></p>
+<p>After examining the un-blurred segments, it is straightforward to see that Waldo is in the top left corner. After changing the process by which the color components were being analyzed and reducing to a single threshold constant, I was able to make a much more accurate and reproducible search function.</p>
+<p><img src="find-waldo-function.jpg" alt=""></p>
+<p>This function is much more effective at finding the partition with Waldo.</p>
+<p><img src="waldo-found.jpg" alt=""></p>
+<p>It&#39;s great that it works on this one image, but maybe I just got lucky. I pulled up a couple more Where&#39;s Waldo images and ran the <code>findWaldo</code> function on each of them with a range of threshold values. For example, with the image below:</p>
+<p><img src="other-waldo-sm.jpg" alt=""></p>
+<p>I used <code>Map</code> to run <code>findWaldo</code> on a this Where&#39;s Waldo image with a range of threshold values.</p>
+<p><img src="waldo-threshold-map.jpg" alt=""></p>
+<p>As the threshold gets higher, more of the image should be eliminated. This was an effective way to find the best threshold value for a particular image, and could accurately eliminate most of the partitions for simple Waldo puzzles.</p>
+<p><img src="correct-threshold.jpg" alt=""></p>
+<p>However, for complex images the number of morphs drastically alters the heuristic value, and cause false negatives for higher threshold values. For example, the complex Waldo image below:</p>
+<p><img src="complex-waldo.jpg" alt=""></p>
+<p>will eliminate the partition with Waldo once the threshold goes beyond the one used to generate the solution below. However, it will continue to show partitions where Waldo couldn&#39;t possibly be.</p>
+<p><img src="false-negative.jpg" alt=""></p>
+<p>For simple Waldo puzzles, component counts are low and striped regions have a uniquely identifiable frequency of morphological components. For all the complex Waldo puzzles I tested, the complexity of each partition reduced the heuristic function&#39;s effectiveness at assigning an accurate value.</p>
+<p>I tried several continuations from this approach, namely</p>
+<ul>
+<li>applying a Gaussian blur to each region proportional to the amount of red in the region, which was somewhat effective at reducing false positives but did not help with false negatives.</li>
+<li>using a matrix reduction to look specifically for the red-white stripe pattern, but this got too complicated very fast.</li>
+<li>using the <code>ImageKeypoints</code> function to search for keypoints, and weighing the heuristic using geometric relations between the keypoints. The geometric heuristic counted the number of parallel lines that can be drawn using exclusive pairs of keypoints. Combining this heuristic into the <code>findWaldo</code> function greatly improved the accuracy on simple images, but the number of keypoints on complex images caused the number of permutations of keypoints to grow exponentially for each partition. This also didn&#39;t eliminate the false positive issue.</li>
+</ul>
+<h2 id="neighborhood-searching">Neighborhood searching</h2>
+<p>The method that worked best was to isolate the red channel of the image, then search <em>n</em> x <em>n</em> neighborhoods of pixels to measure statistical characteristics. With <code>InterquartileRange</code>, <code>QuartileDeviation</code>, and <code>QuartileSkewness</code>, striped red regions can be isolated by their average pixel values.</p>
+<p><img src="neighborhood-search.png" alt=""></p>
+<p>I&#39;ll keep posting more code snippets as I come up with better neighborhood evaluation functions.</p>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
 </html>

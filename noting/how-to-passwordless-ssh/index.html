@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/noting">noting</a>
+
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/noting/how-to-passwordless-ssh">how to passwordless ssh</a>
+
+				
+			
+		</header>
+		<main id="terminal"><h1 id="ssh-without-a-password">SSH without a password</h1>
+<p>You are on computer A, and you want to ssh to computer B without entering the password. First, generate a public and private key on the computer you are using (computer A).</p>
+<pre><code>ssh-keygen -t rsa</code></pre><p>The first two prompts ask you to enter a password (after <code>(empty for no passphrase):</code>). Don&#39;t type anything for both prompts, just press enter.</p>
+<pre><code>Generating public/private rsa key pair.
+Enter file in which to save the key (/.../.ssh/id_rsa):
+Created directory &#39;/.../.ssh&#39;.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /.../.ssh/id_rsa.
+Your public key has been saved in /.../.ssh/id_rsa.pub.
+The key fingerprint is:
+3e:4f:05:79:3a:9f:96:7c:3b:ad:e9:58:37:bc:37:e4 a@A</code></pre><p>If the other computer has not had SSH initialized, you should either log in to the computer and run <code>mkdir -p .ssh</code>, or remotely run the command to create a .ssh folder.</p>
+<pre><code>ssh userb@computerb mkdir -p .ssh</code></pre><p>Now, append your public key (in the <code>id_rsa.pub</code> file) to the file named <code>authorized_keys</code> in computer B. This can be done
+from the command line by piping the <code>cat</code> output to the <code>ssh</code> command.</p>
+<pre><code>cat .ssh/id_rsa.pub | ssh userb@computerb &#39;cat &gt;&gt; .ssh/authorized_keys&#39;</code></pre><p>You will have to enter the password for user computer B one last time. Any subsequent SSH commands will not prompt for a password, and remote
+execution can take place in a script without needing to inject passwords.</p>
+<h1 id="removing-unknown-host-prompt">Removing unknown host prompt</h1>
+<p>Sometimes you are doing these steps on a new machine and want to automate SSH without any manual intervention. The one problem that can arise is during the prompt to connect to an unknown computer (i.e. the IP address and public key are not in <code>.ssh/known_hosts</code>).</p>
+<p>In this situation, you can set <code>StrictHostKeyChecking</code> to <code>no</code> as shown below.</p>
+<pre><code> ssh -o &quot;StrictHostKeyChecking no&quot; ...</code></pre><hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
+</html>

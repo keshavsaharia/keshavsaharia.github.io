@@ -1,97 +1,54 @@
 <!DOCTYPE html>
-<html class="no-js">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Touchscreen light switch</title>
-    <meta name="description" content="A Linux-powered touch screen that can control lights and devices in my room.">
-    <meta name="viewport" content="width=device-width">
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/building">building</a>
 
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/main.css">
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/building/touchscreen-light-switch">touchscreen light switch</a>
 
-    <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-</head>
-<body>
-
-    <span class="menu-trigger writer-icon animated fadeInDown">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </span>
-    <div class="hero-image hero-a-great-story" style="background: url(/img/splash/touchswitch.jpg) center center no-repeat;background-size:cover;">
-        <noscript>
-            <div class="no-js-menu">
-                <ul>
-                    <li><i class="entypo-home"></i><a href="/">keshav.is</a>/</li>
-                    <li><i class="entypo-user"></i><a href="..">building</a></li>
-                    <li><i class="entypo-chart-area"></i><a href=".">Touchscreen light switch</a></li>
-                </ul>
-            </div>
-        </noscript>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div id="menu">
-                <ul>
-                    <li><i class="entypo-home"></i><a href="/">keshav.is</a>/</li>
-                    <li><i class="entypo-user"></i><a href="..">building</a></li>
-                    <li><i class="entypo-chart-area"></i><a href=".">Touchscreen light switch</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 main-content single-content">
-                <p class="meta">
-                    <a href="/">Keshav Saharia</a> on March 25th, 2015
-                </p>
-                <div class="markdown">
-                <h1 id="a-custom-touchscreen-light-switch">a custom touchscreen light switch</h1>
+				
+			
+		</header>
+		<main id="terminal"><h1 id="a-custom-touchscreen-light-switch">a custom touchscreen light switch</h1>
 <p>Silicon Valley is blessed with great weather and great electronics stores. A couple months ago, I found a touch screen monitor and touch screen driver for $45 in a warehouse of surplus electronics. It was a low-risk investment in an idea to attach a touch screen to the wall hook it up to my <a href="/building/jarvis">Jarvis light control system</a>. To drive the monitor, I used a miniature <a href="http://www.amazon.com/Zotac-Celeron-1-5GHz-Barebone-ZBOX-ID18-U/dp/B00FN5ZIOK/ref=sr_1_2?s=electronics&amp;ie=UTF8&amp;qid=1431225017&amp;sr=1-2&amp;keywords=zotac+mini">Linux box by Zotac</a></p>
-<p><img src="/img/building/touchswitch/touchscreen.jpg" alt=""></p>
+<p><img src="touchscreen.jpg" alt=""></p>
 <p>They were relatively easy to hook up � I just slid the two ribbon cables from the touch screen into the slots on the driver. The driver takes a VGA input to display on the screen, and produces a USB output that relays touch coordinates to a computer.</p>
 <p>After setting up the touch screen, I cut a rectangle into a wood panel for the touch screen to sit in. It may be easier to use a router for this, but I used a scroll saw to avoid chipping the wood. I didn�t take too many pictures during this step, but remembered to take one as I was finishing the front.</p>
-<p><img src="/img/building/touchswitch/embedded-in-panel.jpg" alt=""></p>
+<p><img src="embedded-in-panel.jpg" alt=""></p>
 <p>I used aluminum strips to make the frame around the screen. This could have been done in a much cleaner and elegant manner if I had some effective way to cut an aluminum sheet into a rectangular frame, but I didn�t. After finishing the frame, I attached the driver to the back of the wooden panel.</p>
 <p>It�s not the most elegant construction, but a couple screws through the touch driver into the wood panel made it pretty solid. Finally, I installed the panel on the wall in my room.</p>
-<p><img src="/img/building/touchswitch/attached-to-back.jpg" alt=""></p>
+<p><img src="attached-to-back.jpg" alt=""></p>
 <p>I wrote a simple applet in Java that communicates with Jarvis over ssh. The current applet is the simplest possible implementation I could think of � I just created a JLabel with an image that fills the screen, then used a MouseListener with bounding boxes to convert mouse click coordinates into specific button presses. This just goes to show you that you can program a touch screen GUI in less than an hour if your implementation is simple enough.</p>
-<p><img src="/img/building/interface.jpg" alt=""></p>
-<p>Although this is a very niche implementation, it is possible to mimic this setup with a computer connected to an Arduino microcontroller that uses relays to switch lights on and off. I�ve already written about using relays to control things in a previous post, so this would just involve hooking up the Arduino to a computer and programming the GUI to send serial messages to it.</p>
-<p>I still believe the most effective light switch is a good old mechanical one, but having a touch screen on the wall adds a nice touch (pun intended) to the room. It�s a very affordable project, and can easily be customized to any lighting setup.</p>
-
-                </div>
-
-                <div class="single-footer">
-                    <a href="/a">About</a>
-                    <i class="link-spacer"></i>
-                    <a href="/copyrighting">&copy; Keshav Saharia, 2017</a>
-                    <div class="social clearfix">
-                        <a class="social-icon" href="#">
-                            <i class="entypo-twitter"></i>
-                        </a>
-                        <a class="social-icon" href="#">
-                            <i class="entypo-facebook-squared"></i>
-                        </a>
-                    </div>
-
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-<script src="/js/vendor/jquery.jpanelmenu.min.js"></script>
-<script src="/js/vendor/bootstrap.min.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43904822-6', 'auto');
-  ga('send', 'pageview');
-</script>
-
-</body>
+<p><img src="interface.jpg" alt=""></p>
+<p>Although this is a very niche implementation, it is possible to mimic this setup with a computer connected to an Arduino microcontroller that uses relays to switch lights on and off. I have already written about using relays to control things in a previous post, so this would just involve hooking up the Arduino to a computer and programming the GUI to send serial messages to it.</p>
+<p>I still believe the most effective light switch is a good old mechanical one, but having a touch screen on the wall adds a nice touch (pun intended) to the room. It&#39;s a very affordable project, and can easily be customized to any lighting setup.</p>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
 </html>

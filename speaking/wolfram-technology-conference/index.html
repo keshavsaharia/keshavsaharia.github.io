@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/speaking">speaking</a>
+
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/speaking/wolfram-technology-conference">wolfram technology conference</a>
+
+				
+			
+		</header>
+		<main id="terminal"><p>On October 19th, I gave a talk at WTC about my work on ArduinoLink, a symbolic interface between the Arduino microcontroller and Mathematica. It’s the culmination of several months of work on the initial prototype that I created about a year ago. I gave the talk with Christopher Wolfram, 13-year-old son of <a href="https://stephenwolfram.com">the CEO Stephen Wolfram</a>. Stephen and his son had previously demonstrated my work at Maker Faire 2012 in a presentation entitled &quot;Computation Everywhere&quot;.</p>
+<p>In this talk, Christopher gives an introduction and a couple examples, after which I give a more in-depth look at internal structure, third party development, and control of physical devices. My segment of the talk begins at 5:25.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/W3P5JF4whgA?start=325" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
+</html>

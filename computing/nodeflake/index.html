@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/computing">computing</a>
+
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/computing/nodeflake">nodeflake</a>
+
+				
+			
+		</header>
+		<main id="terminal"><h1 id="nodeflake">Nodeflake</h1>
+<p>Nodeflake is a distributed computing framework for Node. It aims to solve the following problems:</p>
+<ul>
+<li>Distributed computing (dividing computation across multiple networked computers) is tedious and inaccessible - most common parallel/distributed programming paradigms have steep learning curves (e.g. C++ and MPI) and actually implementing a system to run them (e.g. setting up an MPI cluster) is no small feat. Nodeflake allows distributed computations to be written in JavaScript, a popular and expressive language with a great development ecosystem.</li>
+<li>Writing separate logic for masters and slaves creates more engineering effort in defining how tasks are distributed. Nodeflake presents a functional programming paradigm that can be seamlessly distributed across a tree topology.</li>
+<li>Distributed computing should enable the generation of <strong>rich visualizations</strong>, but existing methodologies involve separate technology for processing and visualizing data. Nodeflake abstracts the entire analysis workflow with powerful functions for capturing raw data, processing it for analysis and visualization, and exporting the generated visualizations to browser-ready widgets.</li>
+<li>Distributed computing should be seamless across physical devices and the cloud.</li>
+</ul>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
+</html>

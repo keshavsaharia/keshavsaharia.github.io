@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/noting">noting</a>
+
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/noting/making-an-element-fullscreen">making an element fullscreen</a>
+
+				
+			
+		</header>
+		<main id="terminal"><h1 id="making-an-html-element-full-screen">Making an HTML element full screen</h1>
+<p>I want to use JavaScript to make an element full screen. Because of inconsistency between browsers, the general idea is to check the functions in the prototype of a DOMElement for the corresponding browser&#39;s fullscreen call.</p>
+<pre><code class="language-javascript">var elem = document.getElementById(&quot;test&quot;);
+if (elem.requestFullscreen) {
+  elem.requestFullscreen();
+} else if (elem.msRequestFullscreen) {
+  elem.msRequestFullscreen();
+} else if (elem.mozRequestFullScreen) {
+  elem.mozRequestFullScreen();
+} else if (elem.webkitRequestFullscreen) {
+  elem.webkitRequestFullscreen();
+}</code></pre>
+<p>Here is a complete function to toggle full screen.</p>
+<pre><code class="language-javascript">function toggleFullScreen() {
+  if ((document.fullScreenElement &amp;&amp; document.fullScreenElement !== null) ||    
+   (!document.mozFullScreen &amp;&amp; !document.webkitIsFullScreen)) {
+    if (document.documentElement.requestFullScreen) {  
+      document.documentElement.requestFullScreen();  
+    } else if (document.documentElement.mozRequestFullScreen) {  
+      document.documentElement.mozRequestFullScreen();  
+    } else if (document.documentElement.webkitRequestFullScreen) {  
+      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+    }  
+  } else {  
+    if (document.cancelFullScreen) {  
+      document.cancelFullScreen();  
+    } else if (document.mozCancelFullScreen) {  
+      document.mozCancelFullScreen();  
+    } else if (document.webkitCancelFullScreen) {  
+      document.webkitCancelFullScreen();  
+    }  
+  }  
+}</code></pre>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
+</html>

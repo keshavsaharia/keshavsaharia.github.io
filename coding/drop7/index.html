@@ -1,84 +1,68 @@
 <!DOCTYPE html>
-<html class="no-js">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Drop7 Simulator</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/coding">coding</a>
 
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/main.css">
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/coding/drop7">drop7</a>
 
-    <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-</head>
-<body>
-
-    <span class="menu-trigger writer-icon animated fadeInDown">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </span>
-    <div class="hero-image hero-a-great-story" style="background: url(/img/drop7.jpg) center center no-repeat;background-size:cover;">
-        <noscript>
-            <div class="no-js-menu">
-                <ul>
-                    <li><i class="entypo-home"></i><a href="/">keshav.is</a>/</li>
-                    <li><i class="entypo-user"></i><a href="..">coding</a></li>
-                    <li><i class="entypo-chart-area"></i><a href=".">Drop7 Simulator</a></li>
-                </ul>
-            </div>
-        </noscript>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div id="menu">
-                <ul>
-                    <li><i class="entypo-home"></i><a href="/">keshav.is</a>/</li>
-                    <li><i class="entypo-user"></i><a href="..">coding</a></li>
-                    <li><i class="entypo-chart-area"></i><a href=".">Drop7 Simulator</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 main-content single-content">
-                <p class="meta">
-                    <a href="/">Keshav Saharia</a> on 
-                </p>
-                <div class="markdown">
-                
-                </div>
-
-                <div class="single-footer">
-                    <a href="/a">About</a>
-                    <i class="link-spacer"></i>
-                    <a href="/copyrighting">&copy; Keshav Saharia, 2017</a>
-                    <div class="social clearfix">
-                        <a class="social-icon" href="#">
-                            <i class="entypo-twitter"></i>
-                        </a>
-                        <a class="social-icon" href="#">
-                            <i class="entypo-facebook-squared"></i>
-                        </a>
-                    </div>
-
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-<script src="/js/vendor/jquery.jpanelmenu.min.js"></script>
-<script src="/js/vendor/bootstrap.min.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43904822-6', 'auto');
-  ga('send', 'pageview');
-</script>
-
-</body>
+				
+			
+		</header>
+		<main id="terminal"><h1 id="drop7-and-the-java-program-that-can-beat-it-">Drop7, and the Java program that can beat it.</h1>
+<p>If anyone with an iPhone hasn’t seen this game yet, it’s a must. It’s a simple game called Drop7, and it is certainly the most addicting game available for anyone who likes numbers as much as I do. It’s a perfect mix between Tetris and Sudoku, and has eaten up considerable chunks of my free time. This post is about the Java simulator I built to “beat” the game.</p>
+<p><img src="1.jpg" alt=""></p>
+<h2 id="that-nifty-little-game">That nifty little game</h2>
+<p>Drop7 is unique from other puzzle games in that the objective is to simply maximize your score before the screen fills up with discs (if you’re unfamiliar with the game, check out this excellent tutorial I found online at Nick Seeber’s blog). Every turn, a random disc is given to you to drop in any of the 7 columns on the screen. If, after you drop the disc, any of the numbers on the screen are equal to the number of discs they are touching either horizontally or vertically, the disc explodes and you get some points. After the explosion, the discs gravitate to the bottom of the screen- if the rearrangement of discs allows another explosion to take place, you get more points. Typically, Drop7 players aim to set up chains of explosions to earn more points for each disc. An entire synopsis of the game is on Seeber’s blog, and I highly recommend checking it out.</p>
+<h2 id="what-i-did">What I did</h2>
+<p>Drop7 is essentially a game of probability. In setting up chains of explosions, experienced Drop7 players find themselves waiting for certain numbers or “throwing away” numbers that they don’t want. This is skewing the probabilities out of your favor- every disc in Drop7 is an investment, and wasting the investment can bite you in the butt later when you’re stuck on the higher levels with a less-than-exemplary score, biding your time before the never-ending gray discs end your game.</p>
+<p>What I did was create a program in Java that can simulate a game of Drop7. I then created a permutation generator, which runs through all the combinations of columns and future values and combines them in an expected value function to give the expected score for dropping a certain number in a certain column, allowing me to pick the column with the highest expected value. That sentence probably doesn’t make sense in one go, so I’ll elaborate more below.</p>
+<p><img src="2.jpg" alt=""></p>
+<h2 id="the-java-simulator">The Java Simulator</h2>
+<p>I would like to preface this by saying that all my source code will soon be available on my blog (edit: it is available on (github](<a href="https://github.com/keshavsaharia/Drop7Simulator">https://github.com/keshavsaharia/Drop7Simulator</a>)). The simulator I made is built to work on the Hardcore mode in Drop7, although it can be expanded to any of the game’s various game modes.</p>
+<p>First, I made a very basic user interface in order to easily enter numbers into the Drop7 simulator, as you can see above in the right side of the screenshot. The input is then fed into a Board class, which is essentially a drop7 game. Interfacing with the Board.java class allows me to drop numbers into the game and simulate the numbers exploding.</p>
+<p>I then built a permutation generator, which is nothing more than a digital 7-bit counter, which gives me permutations for any size radix and length. The generator creates every single possible combination of column drops and future numbers that Drop7 could give me. For example, permutation number 777,777 (in honor of Drop7), is [ 1 1 7 5 2 7 5 1 1 ]. This permutation represents a situation where the first number is dropped in the first column, followed by a 1 that is dropped in the 7th column, followed by a 5 that is dropped in the 2nd column, and so on (the odd indexes are columns, even ones are discs). The simulator plugs in this permutation into the game, records what the score will be if that permutation “comes true”, and moves on to the next one ([ 1 1 7 5 2 7 5 1 2 ] – the only change in the next one is that the last number is dropped in the second column instead of the first one). Every single possible combination is tabulated into an “expected value”, which is the average of all the permutations.</p>
+<p><img src="3.jpg" alt=""></p>
+<p>This works out to  7^9, or 40,353,607, combinations. Luckily computers don’t get bored of playing the same level of Drop7 40 million times.</p>
+<p>Obviously, this raises the issue of computing time- running 40 million Drop7 levels takes a considerable amount of computing power. In some divine electronic act of humor, the first run I ever made of the simulator took exactly 7 minutes and 7 seconds to process all 40.3 million permutations (running without multithreading on an Intel core i5). Assuming negligible context switching with multithreading, I’d say a multithreaded approach could crunch the permutations in about 2-3 minutes. After dropping the first number, the subsequent permutations for the 2nd, 3rd, 4th, and 5th move take less than 10 seconds to compute (only 7^7 combinations for the second disc, or 823,543). After the 5th disc, the game levels-up, which adds a row of grays to the bottom of the simulator.</p>
+<p>So what do I do about the gray discs that get blown up in the simulator? Obviously, they can’t be replaced by random numbers, as this would not take into account all the possible outcomes from the gray disc. Instead, the simulator branches out, and simulates every possible replacement combination for how many ever grays are exploded in the simulator. Usually, only one gray is exploded, so it just tests the numbers 1-7 in place of the gray and takes the average value of the resulting score (a simple way to get the expected value). This allows the simulator to favor, but not over-favor, permutations that explode the gray discs.</p>
+<p>In short, the Java virtual simulator goes through every possible Drop7 situation that could occur given the current board, and suggests the best move. Obviously, this isn’t guaranteed to be the best move, but having probability on your side is never a bad thing. After a few excruciatingly long waits for the permutations to finish crunching, I can say with confidence that the simulator does indeed work. If you want the source code, check this page in a couple days.</p>
+<p>I’m sure you’ve stopped at this point to openly laugh at my simulator’s 7-minute-long processing time. Although it does give me a perfect time slot to make 2.33 cups of 3-minute noodles, its simply not feasible. So how to reduce the processing time?</p>
+<h2 id="taking-over-the-residence-s-technology">Taking over the residence’s technology</h2>
+<p>The lovable thing about Java is how it is pretty easy to rig interesting setups, both locally and over a network. The lovable thing about my house is that there are laptops sprawled everywhere that are almost exclusively used for my mom and sister’s Facebook access, and not much else. Luckily, there is a hero amongst us who will put that computing power to good use.</p>
+<p><img src="4.jpg" alt=""></p>
+<p>I began with my sister’s computer and worked my way around the house, porting my Java simulator along with a makeshift little communicator class that could communicate with my laptop over our house’s wireless network. After hunting down seven computers (including my own), I ran my makeshift simulator, and assigned each computer to crunch one column. There was very little communication over the network, as each computer had its own permutation generator and an assigned column, and only had to crunch that column and return the result. As the numbers flowed in, they taught me something very important: which column I should drop that good-for-nothing 1 into.</p>
+<p>So, after converting the technology in my house into a makeshift computing cluster, I was able to play Drop7 with the help of my Java simulator and with 1 minute of drumming my fingers. It’s given me a reason to be excited to go back to work, because cluster computing there is easier than cheese. With a little help of JLink, I can link my code to Mathematica and use Mathematica’s powerful built-in cluster computing tools.</p>
+<p>(right: the slightly shitty input field I made to enter the Drop7 board into the simulator. You click on a box and then type a number to put it on the grid. It does support the gray circles, although they aren’t shown)</p>
+<h2 id="so-what-now-">So, what now?</h2>
+<p>If you read through all that, you are probably one of the few people who would be interested in downloading my <a href="https://github.com/keshavsaharia/Drop7Simulator">source code</a>. You can also check the downloads page for more information on the source code. I hope other people out there continue to improve on the simulator and possibly find better ways to maximize scores in the wonderful game of Drop7.</p>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
 </html>

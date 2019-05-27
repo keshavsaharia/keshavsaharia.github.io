@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/building">building</a>
+
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/building/backpack">backpack</a>
+
+				
+			
+		</header>
+		<main id="terminal"><h1 id="turning-a-backpack-into-a-portable-speaker-system">Turning a backpack into a portable speaker system</h1>
+<p>A friend a couple doors down from me in my freshman-year dorm got a backpack with some low-powered speakers. These tiny speakers draw power from the headphone jack, so they can deliver limited power.</p>
+<p><img src="1.jpg" alt=""></p>
+<p>I was commissioned to put a completely new speaker system into the backpack with a budget of $100. I did some research online into compact speakers and portable power, and found very little information on both. All commercial speaker systems were either too expensive or lacked the necessary power. This was 2010 and portable high-powered speakers would not proliferate until several years later.</p>
+<h2 id="the-materials">The Materials</h2>
+<ul>
+<li><p><strong>Duct tape</strong>
+If you are more crafty and have access to tools beyond the scope of what would be available to a college freshman living in a dorm, you might want to substitute the duct tape with a sturdier means of holding things together.</p>
+</li>
+<li><p><strong>Wire</strong> and <strong>alligator clips</strong>
+These will be used for the batteries. I picked these up for a couple dollars at the campus electronics store.</p>
+</li>
+<li><p><strong>Scissors</strong></p>
+</li>
+<li><p><strong>Logitech S220 2.1 speaker system</strong> - After considerable online hunting, I finally settled on these speakers. They are very affordable (~$20) and come with a subwoofer. Their size and weight makes them perfect for a portable speaker system.</p>
+</li>
+</ul>
+<p><img src="2.jpg" alt=""></p>
+<ul>
+<li><strong>Duracell pocket inverter 100</strong> - This is an inverter designed to plug into the cigarette lighter in your car- I stripped the wire and connected it to alligator clips, allowing me to draw DC power from something other than a car battery.</li>
+</ul>
+<p><img src="3.jpg" alt=""></p>
+<ul>
+<li><strong>Tenergy 3000 mAh 7.2V Nimh batteries</strong> (x2) - Amazon has the best deals on such batteries. Two of these hooked up in series provides 14.4 V of DC current, and 3000 mAh equates to about 3-4 hours of full-volume music. I also picked up a charger for these batteries online (a standard Tamiya connector).</li>
+</ul>
+<p><img src="4.jpg" alt=""></p>
+<h2 id="the-backpack">The Backpack</h2>
+<p>In this case, I used the one that my buddy gave me, but if you are building your own you want to look for a sturdy backpack that you wouldn&#39;t have difficulty cutting into.</p>
+<h2 id="the-plan">The Plan</h2>
+<p>The basic idea is to make a backpack that has a source of AC power, in order to drive the speakers. The use of an AC outlet makes it possible to use pretty much any type of speaker out there- in this case, I chose to use the lightest ones I could find. The inverter is the AC power source, and draws energy from the Tenergy battery packs, which in series form a 14.4 V DC power supply.</p>
+<h2 id="the-construction-process">The Construction Process</h2>
+<p>1) <strong>Strip down the Duracell inverter.</strong> Cut off the male plug that goes into a car&#39;s cigarette lighter and strip the wire. The brown wire corresponds to the positive terminal, and the blue corresponds to the negative terminal.</p>
+<p>2) <strong>Hook the batteries up in series to the inverter.</strong> I was initially doing a more complex circuit with voltage dividers and such, but I realized that its not really necessary seeing as the inverter can accept 10.5 - 15 V DC. All the wiring is done with alligator clips, but obviously you can be more sophisticated and use connectors/breadboards to do the wiring. You want the batteries to be connected as a power source to the inverter- a task easier said than done.</p>
+<p>One of the issues I had with the batteries was the output voltage, which sometimes turned out to exceed the 15 V limit of the inverter. To fix this, I added some resistance to the battery to limit the maximum current and to reduce the voltage across the inverter.</p>
+<p>3) <strong>Strip down the backpack.</strong> Using scissors and duct tape, I cleared space for the speakers to fit into the backpack. I first took out the existing low-powered speakers and threw them away. Then, I cut off excess fabric layers, since most backpacks tend to be made out of multi-layer fabric that will create annoying interference if not cut off. I then cut holes in the backpack to allow wires to go between compartments, and took off various unnecessary flaps of material.</p>
+<p><img src="5.jpg" alt=""></p>
+<p>4) <strong>Create a speaker unit to fit into the backpack.</strong> The basic idea is that you want to create a speaker assembly that will slide into the backpack and remain snugly fit inside of it. The unit should consist of both the speakers, the subwoofer, and some padding to prevent damage to the speakers.</p>
+<p>I started by duct taping a cardboard shield to the subwoofer&#39;s output. The cardboard shield ensures that the fabric of the backpack is not making direct contact with the speakers- if the subwoofer is directly against the fabric, it will make a very noticeable buzzing sound from the backpack fabric vibrating. The cardboard shield pushes the fabric out about half an inch- I later ended up cutting various holes in the backpack to minimize resonance in the fabric layers.</p>
+<p><img src="6.jpg" alt=""></p>
+<p>After taping the cardboard shield, I cut up an old t-shirt and used it to create padding for the bottom of the subwoofer. I cut a hole in the padding to prevent muffling the subwoofer&#39;s output.</p>
+<p><img src="7.jpg" alt=""></p>
+<p>I taped this padding onto the bottom of the subwoofer, and used some other cut-up fabric to create sheaths for the two speakers on either side of the subwoofer. Repeating the process on the other side gives a pretty solid duct-tape-heavy unit that can be slid into the backpack.</p>
+<p><img src="8.jpg" alt=""></p>
+<p>The wires and speakers are all duct taped to the subwoofer to reduce clutter. The control knob of the speaker is taped to On and full volume, so when we connect power to this subwoofer it will be ready to go. With the speaker unit all set, it is slid into the backpack compartment and adjusted into place.</p>
+<p><img src="9.jpg" alt=""></p>
+<p>5) <strong>Cut holes in the backpack to prevent unwanted resonance.</strong> Imagine the fabric of the backpack as a bunch of springs woven together. Assuming this fabric is stretched and twisted randomly in various directions, there are many different frequencies at which parts of the fabric would resonate. Because of this, the amount of fabric has to be minimized, and multi-layered areas of fabric had to be stripped down to one layer.</p>
+<p>6) <strong>Hook it up to the inverter.</strong> This last step is the simplest- plug the speaker into the inverter and place the inverter-battery system somewhere safe in the backpack. In this case, I put them inside a small pocket on the top of the backpack, where they fit surprisingly well.</p>
+<p><img src="10.jpg" alt=""></p>
+<p>7) <strong>Make some noise.</strong> Here&#39;s a video of the backpack on its initial test run. The guy in the video is the person who I made the backpack for, and ostensibly the song choice is also his.</p>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
+</html>
