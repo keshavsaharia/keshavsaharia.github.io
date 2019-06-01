@@ -23,20 +23,25 @@
 				
 			
 		</header>
-		<main id="terminal"><h1 id="logic-gates">Logic Gates</h1>
+		<main id="terminal"><h1 id="lego-logic-gates">Lego Logic Gates</h1>
+<p>Coming home from college allows me to see some of the things I hold dearest to my heart: namely, my Legos. While still at school, I stumbled across <a href="http://web.archive.org/web/20140526083931/http://goldfish.ikaruga.co.uk/logic.html">Martin Howard’s Lego logic gates</a> and made a mental note to try building my own when I got home. However, Martin’s Lego logic required a lot of gears and rack-and-pinion pieces that I don’t have a lot of. I set about building my own renditions of logic gates out of Legos, looking for a design that is smaller, uses less specialized bricks, and can be used to build larger mechanical circuits.</p>
+<p><img src="nor.jpg" alt=""></p>
 <p>Digital computers rely on transistor logic to function – that is, that all computation in a computer is done by large combinations of on-and-off switches, wired together in meaningful ways. Transistors are used to create “logic gates”, which are the fundamental building blocks of everything in a computer. This isn’t limited to just desktop computers – phones, iPods, and even those cheap electronic pocket games from McDonald’s happy meals, are all based on transistor logic. In conventional digital circuits, the basic gates take inputs in the form of an electrical current running through a wire (represented by a ’1′ in Boolean logic), or the lack of one (represented as ’0′), and produce an output based on the input. Put simply, a logic gate is like a yes/no question – two wires are connected to a logic gate, carrying either a high or low current, and the logic gate outputs a high or low current onto a third wire based on the combination of currents in the two wires.</p>
 <p>For example, an AND gate outputs a 1 only if both its inputs are 1, and 0 otherwise. The OR gate outputs a 1 if either of its input wires carries a current, the XOR outputs a 1 if only 1 of its inputs is 1, and so on. In computers, these gates are combined to form bigger logic functions – addition, subtraction, and any other mathematical operation can be performed using logic gates. In the combination of gates, the output of two separate gates will be the input of another, which combines with other combinations of gates to be inputs to other gates, and so on.</p>
 <p>For my Lego logic gates, current traveling through a wire is replaced by a horizontally-moving axle. The axle pushed forward represents a logic ’1′, while the axle backwards represents a logic ’0′. The position of the axles determines the position of a third axle moving out of the gate, which is then used as input to further gates. For the rest of this post, a ’1′ represents an inward moving axle, and a ’0′ for the converse.</p>
 <h1 id="the-not-gate">The NOT gate</h1>
 <p>I decided I’d start with the easiest gate – the NOT gate. This was made by having the axle push a lever around a central axis at one of its ends, and connect the other end to the output axle.</p>
+<p><img src="not.jpg" alt=""></p>
 <p>To maximize space, I stuffed two NOT gates into one enclosure. It was tricky trying to minimize the amount of room the lever took, but after playing around with several designs, I finally settled on the one above.</p>
 <h1 id="the-nor-gate">The NOR gate</h1>
 <p>Since all of the basic logic gates can be built out of combination of NOR gates, I decided I would take on this one next. It turned out to be surprisingly easy – just a wider modification of the NOT gate.</p>
+<p><img src="nor.jpg" alt=""></p>
 <p>One of the most troublesome aspects of building these gates was making sure that the amount of axle motion is uniform- that is, an axle moving a certain distance into the gate should move the output axle by the same distance.</p>
 <h1 id="the-and-gate">The AND gate</h1>
 <p>The AND gate can be built by inverting the inputs to a NOR gate. It was made by simply combining the 2 NOT gates and the NOR gate above.</p>
-<h1 id="the">The</h1>
+<p><img src="and.jpg" alt=""></p>
 <p>This gate was the first gate built from the combination of smaller gates.</p>
+<p><img src="and-side.png" alt=""></p>
 <p>This front view shows the AND gate with both its inputs as ’1′.</p>
 <h1 id="the-xor-gate">The XOR gate</h1>
 <p>An XOR gate is crucial for building ALU’s (arithmetic logic units), especially ones that can add and subtract. The XOR had to be built by first converting an XOR gate to NOR logic, then building the individual components and hooking them together. This ended up as an addition of two gates to the AND gate.</p>
