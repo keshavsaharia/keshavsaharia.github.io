@@ -1,0 +1,34 @@
+{
+	"building": {
+		"type": "dir",
+		"format": "preview",
+
+		"child": {
+			"basement": {
+				"title": "Basement",
+				"image": "workshop/3.jpg"
+			},
+			"lego-cnc": {
+				"title": "Lego CNC",
+				"image": "1.jpg"
+			}
+		}
+	},
+	"writing": {
+		"type": "dir",
+		"format": "list",
+
+		"child": {
+			"big-numbers": {
+				"title": "Big Numbers",
+				"date": "test"
+			}
+		}
+	},
+	"reading": {
+		"type": "dir",
+		"child": {
+
+		}
+	}
+}
