@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>China</title>
+		<link rel="stylesheet" href="/assets/css/terminal.css">
+		<link rel="stylesheet" href="/assets/css/markdown.css">
+	</head>
+	<body>
+		<header>
+			<a href="/">keshav.is</a>
+			<span>/</span>
+			
+			
+				
+				<a href="/traveling">traveling</a>
+
+				
+					<span>/</span>
+				
+			
+				
+				<a href="/traveling/china0">china0</a>
+
+				
+			
+		</header>
+		<main id="terminal"><ul>
+<li>Yangshuo</li>
+<li>Beijing</li>
+<li>Shanghai</li>
+<li>Tai&#39;an</li>
+<li>Xi&#39;an</li>
+</ul>
+<hr><main>
+		<script src="/assets/js/command.js"></script>
+		<script src="/assets/js/help.js"></script>
+		<script src="/assets/js/terminal.js"></script>
+		
+			<script id="fs">{}</script>
+		
+		<script>
+			new Terminal(document.getElementById('terminal'), {
+				pwd: '/',
+				fs: JSON.parse(document.getElementById('fs').innerText),
+				autofocus: false
+			})
+		</script>
+	</body>
+</html>
